@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { TestService } from '@core/services/test.service';
-import { catchError, Observable, of } from 'rxjs';
+import { Component } from '@angular/core';
 
 @Component({
 	selector: 'gu-root',
