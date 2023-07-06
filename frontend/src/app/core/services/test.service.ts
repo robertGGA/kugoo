@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 })
 export class TestService {
 	constructor(private http: HttpClient) {
-		console.log('created');
 	}
 
 	testApi(): Observable<string> {
