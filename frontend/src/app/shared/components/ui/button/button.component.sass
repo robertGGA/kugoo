@@ -1,0 +1,49 @@
+@import "mixins"
+.button
+	&-base
+		border-radius: 5px
+		width: 100%
+
+		&-non-border
+			@extend .button-base
+			border: none
+
+.primary
+	@extend .button-base-non-border
+	background: $c-primary-purple
+	color: white
+	@include content-12
+
+	&:hover
+		background-color: $c-primary-purple-hovered
+
+.shadow
+	@extend .button-base
+	background: $c-light-gray
+	color: $c-gray-600
+	border: 1.5px solid $c-light-gray
+	@include content-12
+
+	&:hover
+		color: $c-primary-purple
+		border: 1.5px solid $c-primary-purple
+
+.orange
+	@extend .button-base-non-border
+	background: $c-orange
+	@include content-16
+	color: white
+
+	&:hover
+		background: $c-orange-hovered
+
+.empty
+	@extend .button-base
+	background: white
+	color: $c-primary-purple
+	border: 1.5px solid $c-primary-purple
+	@include content-16
+
+	&:hover
+		background: $c-primary-purple
+		color: white
