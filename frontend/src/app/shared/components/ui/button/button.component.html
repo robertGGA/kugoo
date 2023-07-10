@@ -1,6 +1,8 @@
 <button
 	[ngClass]='getThemeClass()'
 	(click)='submitEvent($event)'
+	class='ku-button'
+	#buttonRef
 >
 	<ng-content></ng-content>
 </button>

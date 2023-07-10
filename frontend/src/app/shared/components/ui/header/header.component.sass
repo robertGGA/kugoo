@@ -14,21 +14,26 @@
 		background: $c-light-gray
 
 	&-middle
+		align-items: center
 		width: 100%
+		@include flex-row
+		max-width: 1200px
+		margin: 0 auto
+		padding: 30px 0
 
 		&-title
 			font-weight: 700
 			font-size: 30px
-			max-width: 1200px
-			margin: 0 auto
-			padding: 30px 0
 
 
 .nav
-	&-wrapper
+	&-middle-wrapper
+		@include flex-row
+
+	&-top-wrapper
+		@include flex-row
 		max-width: 1200px
 		margin: 0 auto
-		display: flex
 		padding: 11px 0
 		justify-content: space-between
 
@@ -79,5 +84,17 @@
 			&:hover
 				background: $c-gray-600
 				color: white
+
+
+.ku-button-wrapper
+	margin-left: 35px
+	width: 114px
+
+ku-button
+	--button-padding: 8px 18px 9px 15px
+
+	span
+		@include content-16
+
 
 
