@@ -1,6 +1,7 @@
 @import "mixins"
 
 .header
+
 	display: flex
 	flex-direction: column
 	width: 100%
@@ -28,6 +29,7 @@
 
 .nav
 	&-middle-wrapper
+		width: 100%
 		@include flex-row
 
 	&-top-wrapper
@@ -86,23 +88,45 @@
 				color: white
 
 
-.ku-button-wrapper
-	margin-left: 35px
+.catalog
 	width: 114px
+	padding: 8px 18px 9px 15px
+	border-radius: 5px
 
-ku-button
-	--button-padding: 8px 18px 9px 15px
+	&-wrapper
+		margin-left: 35px
 
 	span
 		@include content-16
 
+	&-type
+		padding: 8px 14px
+
 .search
+	@include flex-row
+	border: 2px solid $c-primary-purple
+	padding: 4px
+	border-radius: 5px 0 0 5px
+	height: 100%
+	align-items: center
+	width: 100%
+
+	&-button
+		padding: 12px
+		border-radius: 0 5px 5px 0
 
 	&-wrapper
 		@include flex-row
 		align-items: center
+		margin-left: 20px
+		max-width: 603px
+		width: 100%
 
-	.container
+
+	&-autocomplete
+		max-width: 435px
+		width: 100%
+		margin-left: 20px
 
 
 

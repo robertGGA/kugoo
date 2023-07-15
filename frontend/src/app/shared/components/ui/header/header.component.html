@@ -57,8 +57,8 @@
 			Kugoo
 		</p>
 		<nav class='nav-middle-wrapper'>
-			<div class='ku-button-wrapper'>
-				<ku-button>
+			<div class='catalog-wrapper'>
+				<ku-button class='catalog'>
 					<ku-icon
 						widthIcon='14'
 						heightIcon='14'
@@ -70,8 +70,24 @@
 				</ku-button>
 			</div>
 
-			<div class='search-wrapper'>
 
+			<div class='search-wrapper'>
+				<div class='search'>
+					<button class='catalog-type'>
+						Везде
+					</button>
+					<ku-autocomplete
+						placeholder='Искать самокаты KUGO'
+						class='search-autocomplete'
+					></ku-autocomplete>
+				</div>
+				<ku-button class='search-button'>
+					<ku-icon
+						widthIcon='16'
+						heightIcon='16'
+						svgIcon='search'
+					></ku-icon>
+				</ku-button>
 			</div>
 		</nav>
 	</div>

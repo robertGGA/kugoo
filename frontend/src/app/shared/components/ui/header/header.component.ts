@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { IconComponent } from '@shared/components/ui/icon/icon.component';
 import { ButtonComponent } from '@shared/components/ui/button/button.component';
 import { ClickOutsideDirective } from '@shared/directives/click-outside.directive';
+import { AutocompleteComponent } from '@shared/components/ui/autocomplete/autocomplete.component';
 
 @Component({
 	selector: 'ku-header',
 	standalone: true,
-	imports: [CommonModule, IconComponent, ButtonComponent, ClickOutsideDirective],
+	imports: [CommonModule, IconComponent, ButtonComponent, ClickOutsideDirective, AutocompleteComponent],
 	templateUrl: './header.component.html',
 	styleUrls: ['./header.component.sass'],
 	changeDetection: ChangeDetectionStrategy.OnPush
