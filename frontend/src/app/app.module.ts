@@ -8,7 +8,7 @@ import { PreviewCardComponent } from '@shared/components/ui/preview-card/preview
 
 @NgModule({
 	declarations: [
-		AppComponent
+		AppComponent,
 	],
 	imports: [
 		BrowserModule,

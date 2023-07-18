@@ -1,8 +1,10 @@
-<button
-	[ngClass]='getThemeClass()'
-	(click)='submitEvent($event)'
-	class='ku-button'
-	#buttonRef
->
-	<ng-content></ng-content>
-</button>
+<ng-container>
+	<button
+		[ngClass]='getThemeClass()'
+		(click)='submitEvent($event)'
+		class='ku-button'
+		#buttonRef
+	>
+		<ng-content></ng-content>
+	</button>
+</ng-container>

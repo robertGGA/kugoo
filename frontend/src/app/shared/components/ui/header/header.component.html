@@ -53,21 +53,79 @@
 	</div>
 
 	<div class='header-middle'>
-		<p class='header-middle-title'>
-			Kugoo
-		</p>
 		<nav class='nav-middle-wrapper'>
-			<div class='ku-button-wrapper'>
-				<ku-button>
+			<div class='nav-middle-block'>
+				<p class='header-middle-title'>
+					Kugoo
+				</p>
+				<div class='catalog-wrapper'>
+					<ku-button class='catalog'>
+						<ku-icon
+							widthIcon='14'
+							heightIcon='14'
+							svgIcon='menu'
+						></ku-icon>
+						<span>
+							Каталог
+						</span>
+					</ku-button>
+				</div>
+
+				<div class='search-wrapper'>
+					<div class='search'>
+						<ku-dropdown
+							[options]='testOptions'
+							class='type-button'
+						>
+							Везде
+							<ng-template let-item>
+								<ku-dropdown-option></ku-dropdown-option>
+							</ng-template>
+						</ku-dropdown>
+						<ku-autocomplete
+							placeholder='Искать самокаты KUGO'
+							class='search-autocomplete'
+						></ku-autocomplete>
+					</div>
+					<ku-button class='search-button'>
+						<ku-icon
+							widthIcon='20'
+							heightIcon='21'
+							svgIcon='search'
+						></ku-icon>
+					</ku-button>
+				</div>
+			</div>
+			<div class='buttons-container'>
+				<button class='icon-wrapper'>
 					<ku-icon
-						widthIcon='14'
-						heightIcon='14'
-						svgIcon='menu'
-					></ku-icon>
+						widthIcon='20'
+						heightIcon='20'
+						svgIcon='balance2'
+					>
+					</ku-icon>
+				</button>
+
+				<button class='icon-wrapper'>
+					<ku-icon
+						widthIcon='20'
+						heightIcon='20'
+						svgIcon='heart'
+					>
+					</ku-icon>
+				</button>
+
+				<button class='icon-wrapper'>
+					<ku-icon
+						widthIcon='20'
+						heightIcon='20'
+						svgIcon='shopping-cart2'
+					>
+					</ku-icon>
 					<span>
-						Каталог
+						Корзина
 					</span>
-				</ku-button>
+				</button>
 			</div>
 		</nav>
 	</div>
