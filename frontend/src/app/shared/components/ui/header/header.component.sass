@@ -13,12 +13,17 @@
 		width: 100%
 		background: $c-light-gray
 
+		&-wrapper
+			@include width-1200
+			@include flex-row
+			padding: 10px 0
+
+
 	&-middle
 		align-items: center
-		width: 100%
 		@include flex-row
-		max-width: 1200px
-		margin: 0 auto
+		@include width-1200
+
 		padding: 30px 0
 
 		&-title
@@ -42,8 +47,7 @@
 
 	&-top-wrapper
 		@include flex-row
-		max-width: 1200px
-		margin: 0 auto
+		@include width-1200
 		padding: 11px 0
 		justify-content: space-between
 
@@ -164,6 +168,26 @@
 	max-width: 175px
 	width: 100%
 	justify-content: space-between
+
+
+.bottom
+	&-nav
+		@include flex-row
+		max-width: 776px
+		width: 100%
+		justify-content: space-between
+		align-items: center
+
+		a
+			@include content-14
+
+	&-afterlink
+		padding: 2px 8px
+		@include content-10
+		color: white
+		background-color: $c-primary-purple
+		border-radius: 300px
+
 
 
 
