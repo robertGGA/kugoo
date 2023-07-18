@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, Optional, Self } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ControlValueAccessor, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { ControlValueAccessor, FormControl, NgControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
 	selector: 'ku-autocomplete',
@@ -22,6 +22,12 @@ export class AutocompleteComponent<T> implements ControlValueAccessor {
 	@Input() isMultiple: boolean = false;
 
 	value: T | null = null;
+
+	constructor(protected cdr: ChangeDetectorRef, @Self() @Optional() public ngControl: NgControl) {
+		if (this.ngControl) {
+			this.ngControl.valueAccessor = this;
+		}
+	}
 
 	@Input()
 	set options(options: Array<T> | null) {
