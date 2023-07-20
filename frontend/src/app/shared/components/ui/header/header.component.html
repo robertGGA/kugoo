@@ -73,15 +73,20 @@
 
 				<div class='search-wrapper'>
 					<div class='search'>
+
 						<ku-dropdown
 							[options]='testOptions'
 							class='type-button'
+							[optionTemplate]='optionsTemplate'
 						>
 							Везде
-							<ng-template let-item>
-								<ku-dropdown-option></ku-dropdown-option>
+							<ng-template #optionsTemplate let-option>
+								<ku-dropdown-option
+									[item]='option'
+								></ku-dropdown-option>
 							</ng-template>
 						</ku-dropdown>
+
 						<ku-autocomplete
 							placeholder='Искать самокаты KUGO'
 							class='search-autocomplete'
@@ -166,3 +171,4 @@
 		</div>
 	</div>
 </header>
+

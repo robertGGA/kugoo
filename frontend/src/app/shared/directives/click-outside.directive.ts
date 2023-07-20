@@ -5,8 +5,8 @@ import {
 	EventEmitter,
 	HostListener,
 	Inject,
-	OnDestroy,
-	Output
+	OnDestroy, OnInit,
+	Output, Renderer2
 } from '@angular/core';
 import { filter, fromEvent, Subscription } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
@@ -15,40 +15,27 @@ import { DOCUMENT } from '@angular/common';
 	selector: '[kuClickOutside]',
 	standalone: true
 })
-export class ClickOutsideDirective {
+export class ClickOutsideDirective implements OnInit, OnDestroy {
 
 	@Output() eventOnClick = new EventEmitter();
-	isFirstClicked: boolean = false;
+	listenerFn = () => {
+	};
 
-	constructor(private elementRef: ElementRef, @Inject(DOCUMENT) private document: Document) {
+	constructor(private elementRef: ElementRef,
+				@Inject(DOCUMENT) private document: Document,
+				private renderer: Renderer2) {
 	}
 
-	@HostListener('document:click', ['$event.target'])
-	public onClick(target: EventTarget) {
-		const clickedInside = this.elementRef.nativeElement.contains(target) || this.elementRef.nativeElement === target;
-
-		if (!clickedInside) {
-			this.eventOnClick.emit();
-		}
+	ngOnInit(): void {
+		this.listenerFn = this.renderer.listen(this.elementRef.nativeElement, 'click', (event) => {
+			const clickedInside = this.elementRef.nativeElement.contains(event.target) || this.elementRef.nativeElement === event.target;
+			if (!clickedInside) {
+				this.eventOnClick.emit();
+			}
+		})
 	}
 
-	// ngAfterViewInit(): void {
-	// 	this.subscriptions = fromEvent(this.document, 'click')
-	// 		.pipe(filter(event => !this.isInside(event.target as HTMLElement)))
-	// 		.subscribe((e) => {
-	// 			this.eventOnClick.emit();
-	// 		})
-	// }
-	//
-	// private isInside(element: HTMLElement): boolean {
-	// 	const nativeElement = this.elementRef.nativeElement as HTMLElement;
-	// 	console.log(nativeElement === element || nativeElement.contains(element));
-	// 	return nativeElement === element || nativeElement.contains(element);
-	// }
-	//
-	// ngOnDestroy(): void {
-	// 	this.subscriptions?.unsubscribe();
-	// }
-
-
+	ngOnDestroy(): void {
+		this.listenerFn();
+	}
 }
