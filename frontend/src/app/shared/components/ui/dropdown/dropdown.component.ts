@@ -31,14 +31,12 @@ export class DropdownComponent<T> implements ControlValueAccessor {
 
 	isClicked$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-	@ContentChild(TemplateRef) tmpl!: TemplateRef<any>;
-
 	@Input()
 	set options(options: Array<T> | null) {
 		this._options = options;
 	}
 
-	@Input() optionTemplate!: TemplateRef<any>;
+	@Input() optionTemplate!: TemplateRef<any | undefined>;
 	@Input() theme: DropdownThemes = 'shadow';
 	@Input() optionKey: string = 'id';
 	@Input() optionLabel: string = 'name';

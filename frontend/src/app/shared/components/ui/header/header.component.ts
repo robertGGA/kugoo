@@ -17,9 +17,12 @@ import { DropdownOptionComponent } from '@shared/components/ui/dropdown-option/d
 })
 export class HeaderComponent {
 
-	testOptions: { id: string, name: string }[] = [{ id: '0', name: 'hi' }, { id: '1', name: 'fd' }]
+	testOptions: { id: string, name: string }[] =
+		[{ id: '0', name: 'Самокаты' }, { id: '1', name: 'Аксессуары' }]
 
 	click() {
 		console.log('hi i opened')
 	}
+
+	protected readonly DropdownOptionComponent = DropdownOptionComponent;
 }

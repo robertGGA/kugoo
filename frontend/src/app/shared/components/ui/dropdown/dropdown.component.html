@@ -12,17 +12,24 @@
 	>
 
 	</ku-icon>
-
-	<ng-container *ngIf='!options?.length && !(isClicked$ | async); else optionsContainer'></ng-container>
+	<ng-container *ngIf='isClicked$ | async'>
+		<div
+			kuClickOutside
+			(eventOnClick)='close()'
+			class='options-container'
+		>
+			<ng-container *ngFor='let option of options'>
+				<ng-container
+					*ngTemplateOutlet='optionTemplate || optionsContainer; context: {$implicit: option}'
+				></ng-container>
+			</ng-container>
+		</div>
+	</ng-container>
 </button>
 
+
 <ng-template #optionsContainer>
-	<div
-		kuClickOutside
-		(eventOnClick)='close()'
-		class='options-container'
-		*ngFor='let option of options'
-	>
-		<ng-container *ngTemplateOutlet='tmpl; context: { $implicit: option }'></ng-container>
+	<div>
+		Здесь ничего нет
 	</div>
 </ng-template>
