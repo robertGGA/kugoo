@@ -1,4 +1,6 @@
-// #Colors section
+@import "adaptive/adaptive"
+
+/* Colors Section */
 
 $c-primary-purple: #6F73EE
 $c-primary-purple-hovered: #8185F9
@@ -14,7 +16,7 @@ $c-viber-color: #8E24AA
 $c-whatsapp-color: #4CAF50
 
 
-// #Mixins section
+/* Content Mixins */
 
 @mixin h1
 	font-size: 35px
@@ -52,15 +54,14 @@ $c-whatsapp-color: #4CAF50
 	font-size: 10px
 	font-weight: 400
 
+
+/* Width Mixins */
 @mixin width-1200
 	max-width: 1200px
 	width: 100%
 	margin: 0 auto
 
-// #Width mixins
-
-
-// #Template Mixins
+/* Template Mixins */
 
 @mixin flex-row
 	display: flex

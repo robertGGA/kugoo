@@ -50,6 +50,44 @@
 				</button>
 			</div>
 		</div>
+
+		<nav class='nav-top-wrapper-mobile'>
+			<div class='app-description'>
+				<img
+					class='app-logo'
+					src='assets/logo/logotype.png'
+				>
+
+				<div class='app-description-container'>
+					<span>
+						Открыть в приложении
+					</span>
+					<div class='app-stars'>
+						<svg
+							width='9'
+							height='9'
+							viewBox='0 0 9 9'
+							fill='none'
+							xmlns='http://www.w3.org/2000/svg'
+							*ngFor='i of [1, 2, 3, 4, 5]'
+						>
+							<path
+								d='M4.5 0L5.68762 2.86538L8.77975 3.10942L6.42161 5.12437L7.14503 8.14058L4.5 6.5205L1.85497 8.14058L2.57839 5.12437L0.220246 3.10942L3.31238 2.86538L4.5 0Z'
+								fill='#FFD12E'
+							/>
+						</svg>
+
+						<p>
+							2K
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<ku-button class='app-button'>
+				Открыть
+			</ku-button>
+		</nav>
 	</div>
 
 	<div class='header-middle'>
@@ -80,7 +118,10 @@
 							[optionTemplate]='optionsTemplate'
 						>
 							Везде
-							<ng-template #optionsTemplate let-option>
+							<ng-template
+								#optionsTemplate
+								let-option
+							>
 								<ku-dropdown-option
 									[item]='option'
 								></ku-dropdown-option>
