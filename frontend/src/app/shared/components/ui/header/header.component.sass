@@ -23,8 +23,13 @@
 				display: none
 
 		&-mobile
-			padding: 0 15px
-			background-color: white
+			display: none
+
+			@include sm
+				display: flex
+				padding: 0 15px
+				background-color: white
+
 
 			&-input
 				padding: 9px 10px
