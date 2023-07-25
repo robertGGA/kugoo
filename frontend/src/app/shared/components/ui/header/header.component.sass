@@ -9,6 +9,7 @@
 		width: 100%
 		border-bottom: 1px solid #ECF3FF
 
+
 	&-bottom
 		width: 100%
 		background: $c-light-gray
@@ -50,6 +51,8 @@
 		@include width-1200
 		padding: 11px 0
 		justify-content: space-between
+		@include sm
+			display: none
 
 		nav
 			@include flex-row
@@ -61,6 +64,19 @@
 
 			a:hover
 				color: $c-black
+
+
+
+		&-mobile
+			display: none
+
+			@include sm
+				@include flex-row
+				justify-content: space-between
+				align-items: center
+				padding: 7px 15px
+
+
 
 	&-icons-container
 		@include flex-row
@@ -162,6 +178,9 @@
 		span
 			margin-left: 10px
 
+			@include md
+				display: none
+
 .buttons-container
 	@include flex-row
 	align-items: center
@@ -190,6 +209,44 @@
 		color: white
 		background-color: $c-primary-purple
 		border-radius: 300px
+
+
+
+
+.app
+
+	&-logo
+		width: 25px
+		height: 25px
+
+	&-description
+		@include flex-row
+
+		&-container
+			display: flex
+			flex-direction: column
+			margin-left: 9px
+
+			span
+				@include content-10
+
+	&-button
+		padding: 5px 15px
+		border-radius: 5px
+
+	&-stars
+		display: flex
+		align-items: center
+		svg
+			margin-right: 3px
+
+			&:last-child
+				margin: 5px
+
+		p
+			font-size: 8px
+			font-weight: 400
+			color: $c-gray-600
 
 
 

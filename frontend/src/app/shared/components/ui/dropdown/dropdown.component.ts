@@ -80,12 +80,13 @@ export class DropdownComponent<T> implements ControlValueAccessor {
 		this._value = item;
 	}
 
-	private getIsOpen(): boolean {
+	private isOpen(): boolean {
 		return this.isClicked$.value;
 	}
 
-	swap(): void {
-		this.isClicked$.next(!this.getIsOpen())
+	swap(event: Event): void {
+		event.stopPropagation();
+		this.isClicked$.next(!this.isOpen())
 	}
 
 	close(): void {

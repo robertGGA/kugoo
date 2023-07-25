@@ -27,8 +27,9 @@ export class ClickOutsideDirective implements OnInit, OnDestroy {
 	}
 
 	ngOnInit(): void {
-		this.listenerFn = this.renderer.listen(this.elementRef.nativeElement, 'click', (event) => {
+		this.listenerFn = this.renderer.listen('window', 'click', (event) => {
 			const clickedInside = this.elementRef.nativeElement.contains(event.target) || this.elementRef.nativeElement === event.target;
+			console.log(clickedInside);
 			if (!clickedInside) {
 				this.eventOnClick.emit();
 			}
