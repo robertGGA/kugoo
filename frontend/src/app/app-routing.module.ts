@@ -6,12 +6,7 @@ const routes: Routes = [
 	{
 		path: '',
 		loadChildren: () => import('./public/public.module').then(m => m.PublicModule),
-	},
-	{
-		path: '**',
-		pathMatch: 'full',
-		component: NotFoundPageComponent
-	},
+	}
 ];
 
 @NgModule({

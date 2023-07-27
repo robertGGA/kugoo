@@ -2,13 +2,8 @@ import {
 	ChangeDetectionStrategy,
 	Component,
 	ElementRef,
-	EventEmitter,
-	inject,
 	Input,
-	Output,
-	Renderer2,
 	ViewChild,
-	ViewEncapsulation
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonThemes } from '@shared/components/ui/button/models/button.types';
@@ -24,16 +19,7 @@ import { ButtonThemes } from '@shared/components/ui/button/models/button.types';
 export class ButtonComponent {
 
 	@Input() theme: ButtonThemes = 'primary';
-	@Output() click = new EventEmitter();
 	@ViewChild('buttonRef') buttonRef!: ElementRef;
-	renderer = inject(Renderer2);
-
-	constructor(private elementRef: ElementRef) {
-	}
-
-	submitEvent($event: any) {
-		this.click.emit($event);
-	}
 
 	getThemeClass(): ButtonThemes {
 		return this.theme;
@@ -42,4 +28,5 @@ export class ButtonComponent {
 	setCurrentTheme(theme: ButtonThemes) {
 		this.theme = theme;
 	}
+
 }
