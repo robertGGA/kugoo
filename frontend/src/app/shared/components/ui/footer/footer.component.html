@@ -1,0 +1,25 @@
+<footer class='footer'>
+	<div class='upper-footer-wrapper'>
+		<div class='upper-footer'>
+			<span>
+				Оставьте свою почту и станьте первым, кто получит скидку на новые самокаты
+			</span>
+
+			<div class='email-wrapper'>
+				<input
+					placeholder='Введите ваш email'
+					[formControl]='emailControl'
+					class='email-input'
+				>
+
+				<ku-button
+					(click)='onSubmitEmail()'
+					class='email-button'
+					theme='empty'
+				>
+					Подписаться
+				</ku-button>
+			</div>
+		</div>
+	</div>
+</footer>
