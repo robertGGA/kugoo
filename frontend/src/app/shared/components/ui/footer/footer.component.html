@@ -14,12 +14,19 @@
 
 				<ku-button
 					(click)='onSubmitEmail()'
+					[disabled]='!!emailControl.errors'
 					class='email-button'
 					theme='empty'
+
 				>
 					Подписаться
 				</ku-button>
 			</div>
 		</div>
 	</div>
+
+	<div class='middle-footer'>
+
+	</div>
+
 </footer>

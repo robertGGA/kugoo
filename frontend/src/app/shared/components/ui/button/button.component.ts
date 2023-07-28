@@ -19,6 +19,7 @@ import { ButtonThemes } from '@shared/components/ui/button/models/button.types';
 export class ButtonComponent {
 
 	@Input() theme: ButtonThemes = 'primary';
+	@Input() disabled: boolean = false;
 	@ViewChild('buttonRef') buttonRef!: ElementRef;
 
 	getThemeClass(): ButtonThemes {
