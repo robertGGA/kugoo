@@ -55,8 +55,84 @@
 
 .middle
 	&-footer
-		margin-right: 46px
 		@include flex-row
 		@include width-1200
+		justify-content: space-between
+		margin: 46px auto 49px auto
 
-		&-title
+		h4
+			@include h4
+			font-weight: 500
+
+		a
+			color: $c-gray-600
+			margin-top: 10px
+
+		&-column
+			display: grid
+			grid-template-columns: repeat(auto-fill, 153px)
+			grid-auto-rows: max-content
+
+			a:first-child
+				margin-top: 17px
+
+
+.address
+	&-block
+		max-width: 491px
+		width: 100%
+		@include flex-column
+
+
+	&-first-row
+		@include flex-row
+		justify-content: space-between
+		align-items: center
+
+		button
+			background: none
+			border: none
+			color: $c-primary-purple
+			@include content-12
+			font-weight: 500
+
+	&-content
+		margin-top: 28px
+		@include flex-row
+
+		& div
+			@include flex-column
+			max-width: 144px
+
+			span
+
+			p
+				@include content-12
+				margin-top: 8px
+				color: $c-gray-600
+
+
+
+.contacts
+	@include flex-row
+	align-items: center
+	justify-content: flex-start
+	flex-wrap: wrap
+
+	span
+		@include content-12
+
+	&-item
+		@include flex-column
+		margin-top: 17px
+
+		&:first-child
+			margin-right: 40px
+
+	&-number
+		@include content-16
+		font-weight: 500
+		margin: 5px 0 7px 0
+
+	&-date
+		color: $c-gray-600
