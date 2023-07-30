@@ -139,4 +139,43 @@
 		</div>
 	</div>
 
+	<div class='bottom-footer'>
+		<div class='download-links-container'>
+			<h1>
+				KUGOO
+			</h1>
+			<div class='download-links-button-container'>
+				<button class='button-link'>
+					<img  src='assets/button-links/goggle.png' />
+				</button>
+
+				<button class='button-link'>
+					<img src='assets/button-links/apple.png' />
+				</button>
+			</div>
+			<nav>
+				<ku-download-link
+					*ngFor='let link of links'
+					[link]='link.link'
+				>
+					<ku-icon
+						heightIcon='20'
+						widthIcon='20'
+						[svgIcon]='link.iconName'
+					></ku-icon>
+
+					<div class='download-links-button'>
+						<span>
+							{{link.title}}
+						</span>
+
+						<span>
+							{{link.count}}
+						</span>
+					</div>
+				</ku-download-link>
+			</nav>
+		</div>
+	</div>
+
 </footer>

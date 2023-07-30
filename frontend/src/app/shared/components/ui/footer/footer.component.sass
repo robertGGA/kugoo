@@ -3,6 +3,7 @@
 .footer
 	display: flex
 	flex-direction: column
+	background-color: #F4F7FB
 
 .upper
 	&-footer
@@ -136,3 +137,60 @@
 
 	&-date
 		color: $c-gray-600
+
+
+.bottom
+
+	&-footer
+		margin-top: 49px
+		@include width-1200
+		flex-direction: column
+
+
+
+.download-links
+
+	&-button
+		@include flex-column
+		margin-left: 13px
+
+		span
+			text-decoration: none
+
+			&:first-child
+				@include content-14
+
+			&:last-child
+				@include content-10
+				color: $c-gray-600
+
+		&-container
+			@include flex-row
+			align-items: center
+
+	&-container
+		@include flex-row
+		justify-content: space-between
+		padding: 36px 0
+		border-top: 0.5px solid rgba($c-gray-600, 0.6)
+		border-bottom: 0.5px solid rgba($c-gray-600, 0.6)
+
+		h1
+			@include logo
+
+		nav
+			@include flex-row
+			align-items: center
+			max-width: 522px
+			width: 100%
+			justify-content: space-between
+			flex-wrap: wrap
+
+
+.button
+	&-link
+		border: none
+		background: none
+		max-width: 156px
+		width: 100%
+
