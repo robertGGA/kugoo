@@ -5,6 +5,7 @@ import { ButtonComponent } from '@shared/components/ui/button/button.component';
 import { emailRegex } from '@app/utils/regex.helper';
 import { IconComponent } from '@shared/components/ui/icon/icon.component';
 import { DownloadLinkComponent } from '@shared/components/ui/download-link/download-link.component';
+import { RouterLink } from '@angular/router';
 
 export interface LinksButtonInterface {
 	link: string,
@@ -16,7 +17,7 @@ export interface LinksButtonInterface {
 @Component({
 	selector: 'ku-footer',
 	standalone: true,
-	imports: [CommonModule, ButtonComponent, ReactiveFormsModule, IconComponent, DownloadLinkComponent],
+	imports: [CommonModule, ButtonComponent, ReactiveFormsModule, IconComponent, DownloadLinkComponent, RouterLink],
 	templateUrl: './footer.component.html',
 	styleUrls: ['./footer.component.sass'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
