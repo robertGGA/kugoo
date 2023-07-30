@@ -194,3 +194,55 @@
 		max-width: 156px
 		width: 100%
 
+
+.req
+
+	&-container
+		@include flex-row
+		justify-content: space-between
+		padding: 17px 0 18px 0
+
+		&-second
+			@include flex-row
+			justify-content: space-between
+			max-width: 464px
+			width: 100%
+
+		nav
+			a
+				color: $c-gray-600
+			a:first-child
+				margin-right: 41px
+
+		div
+			@include flex-row
+			align-items: center
+
+	&-payments
+
+		img
+			width: 34px
+			height: 24px
+			margin-right: 5px
+
+			&:last-child
+				margin: 0
+
+.icon-link
+	display: flex
+	color: $c-gray-600
+
+	&:nth-child(1):hover
+		color: $c-viber-color
+
+	&:nth-child(2):hover
+		color: $c-whatsapp-color
+
+	&:nth-child(3):hover
+		color: $c-telegram-color
+
+.social-media
+	&-container
+		max-width: 157px
+		width: 100%
+		justify-content: space-between
