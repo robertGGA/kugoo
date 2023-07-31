@@ -13,6 +13,9 @@
 		@include width-1200
 		padding: 24px 0 21px 0
 
+		@include sm
+			flex-direction: column
+
 		span
 			display: flex
 			max-width: 390px
@@ -20,6 +23,8 @@
 			font-weight: 600
 			color: white
 			text-transform: uppercase
+			@include sm
+				text-align: center
 
 		&-wrapper
 			background-color: $c-primary-purple
@@ -41,15 +46,30 @@
 			@include content-16
 			color: white
 
+		@include sm
+			margin: 18px 15px 16px 15px
+			width: 100%
+			max-width: 100%
+
 	&-button
 		padding: 15px 25px
 		border-radius: 5px
+
+		@include sm
+			display: flex
+			padding: 15px 0
+			justify-content: center
+			width: 100%
 
 	&-wrapper
 		@include flex-row
 		align-items: center
 		width: 100%
 		justify-content: end
+
+		@include sm
+			max-width: 90%
+			flex-direction: column
 
 
 
