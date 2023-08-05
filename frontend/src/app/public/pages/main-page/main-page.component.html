@@ -1,3 +1,31 @@
-<div>
-	<ku-preview-card *ngFor='let card of cardData' [cardData]='card'></ku-preview-card>
-</div>
+<main>
+	<section class='scooter-list-container'>
+		<div class='scooter-list-title'>
+			<h1>
+				Электросамокаты
+			</h1>
+			<div>
+				<ku-button theme='empty' class='button'>
+					Хиты продаж
+				</ku-button>
+				<ku-button theme='shadow' class='button'>
+					Для города
+				</ku-button>
+				<ku-button theme='shadow' class='button'>
+					Для взрослых
+				</ku-button>
+				<ku-button theme='shadow' class='button'>
+					Для детей
+				</ku-button>
+			</div>
+		</div>
+		<div class='scooter-list'>
+			<ku-preview-card
+				*ngFor='let card of cardData'
+				[cardData]='card'
+			></ku-preview-card>
+		</div>
+
+	</section>
+
+</main>

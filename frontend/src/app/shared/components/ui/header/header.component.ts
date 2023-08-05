@@ -6,11 +6,12 @@ import { ClickOutsideDirective } from '@shared/directives/click-outside.directiv
 import { AutocompleteComponent } from '@shared/components/ui/autocomplete/autocomplete.component';
 import { DropdownComponent } from '@shared/components/ui/dropdown/dropdown.component';
 import { DropdownOptionComponent } from '@shared/components/ui/dropdown-option/dropdown-option.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
 	selector: 'ku-header',
 	standalone: true,
-	imports: [CommonModule, IconComponent, ButtonComponent, ClickOutsideDirective, AutocompleteComponent, DropdownComponent, DropdownOptionComponent],
+	imports: [CommonModule, IconComponent, ButtonComponent, ClickOutsideDirective, AutocompleteComponent, DropdownComponent, DropdownOptionComponent, RouterLink],
 	templateUrl: './header.component.html',
 	styleUrls: ['./header.component.sass'],
 	changeDetection: ChangeDetectionStrategy.OnPush

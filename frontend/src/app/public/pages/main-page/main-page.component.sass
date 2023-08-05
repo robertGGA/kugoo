@@ -1,0 +1,36 @@
+@import "mixins"
+
+main
+	@include width-1200
+
+.scooter
+	&-list
+		display: grid
+		justify-content: center
+		grid-template-columns: repeat(auto-fill, 255px)
+		gap: 30px
+		margin: 50px 0 30px 0
+
+		&-title
+			@include flex-row
+			justify-content: space-between
+
+			h1
+				@include h1
+				text-transform: uppercase
+
+			div
+				@include flex-row
+				gap: 10px
+
+			.button
+				padding: 10px 20px
+				text-align: center
+				border-radius: 5px
+				@include content-12
+
+
+		&-container
+			@include flex-column
+			margin-top: 81px
+

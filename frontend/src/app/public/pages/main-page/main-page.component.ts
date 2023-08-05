@@ -20,6 +20,15 @@ export class MainPageComponent {
 			name: 'Kogoo G-Max'
 		},
 		{
+			id: '7',
+			image: '',
+			discount: 1000,
+			price: 2000,
+			specs: { speed: 15, power: 1.2, accum: 300, time: 5 },
+			isNew: false,
+			name: 'Kogoo G-Max'
+		},
+		{
 			id: '2',
 			image: '',
 			discount: 1000,
@@ -44,5 +53,5 @@ export class MainPageComponent {
 			specs: { speed: 15, power: 1.2, accum: 300, time: 5 },
 			name: 'Kogoo G-Max'
 		}
-	]
+	];
 }
