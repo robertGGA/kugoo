@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '@shared/components/ui/icon/icon.component';
 import { ButtonComponent } from '@shared/components/ui/button/button.component';
+import { PreviewCardTypes } from '@shared/components/ui/preview-card/preview-card.types';
 
 @Component({
 	selector: 'ku-preview-card',
@@ -12,5 +13,11 @@ import { ButtonComponent } from '@shared/components/ui/button/button.component';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PreviewCardComponent {
+
+	@Input() cardData!: PreviewCardTypes;
+
+	get isNew(): boolean | undefined {
+		return this.cardData.isNew;
+	}
 
 }

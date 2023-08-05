@@ -5,6 +5,7 @@
 	&-actions
 		@include flex-row
 		gap: 10px
+
 		button
 			display: flex
 			background: none
@@ -92,11 +93,16 @@
 .chip
 	padding: 4px 9px
 	color: white
+	border-radius: 5px
 
 	&-hit
 		@extend .chip
-		border-radius: 5px
 		background: $c-red
+		text-transform: uppercase
+
+	&-new
+		@extend .chip
+		background-color: $c-green
 
 
 .buy-button
