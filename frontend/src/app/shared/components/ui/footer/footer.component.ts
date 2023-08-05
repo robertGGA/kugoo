@@ -6,6 +6,8 @@ import { emailRegex } from '@app/utils/regex.helper';
 import { IconComponent } from '@shared/components/ui/icon/icon.component';
 import { DownloadLinkComponent } from '@shared/components/ui/download-link/download-link.component';
 import { RouterLink } from '@angular/router';
+import { Dialog, DialogModule } from '@angular/cdk/dialog';
+import { EmailDialogComponent } from '@app/public/components/modals/email-dialog/email-dialog.component';
 
 export interface LinksButtonInterface {
 	link: string,
@@ -17,7 +19,7 @@ export interface LinksButtonInterface {
 @Component({
 	selector: 'ku-footer',
 	standalone: true,
-	imports: [CommonModule, ButtonComponent, ReactiveFormsModule, IconComponent, DownloadLinkComponent, RouterLink],
+	imports: [CommonModule, ButtonComponent, ReactiveFormsModule, IconComponent, DownloadLinkComponent, RouterLink, DialogModule],
 	templateUrl: './footer.component.html',
 	styleUrls: ['./footer.component.sass'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
@@ -43,12 +45,12 @@ export class FooterComponent {
 			count: 3921
 		}]
 
-	constructor() {
+	constructor(private dialogService: Dialog) {
 		this.emailControl = new FormControl<string | null>(null, [Validators.pattern(emailRegex), Validators.required]);
 	}
 
 	onSubmitEmail(): void {
-		console.log(this.emailControl.errors);
+		this.dialogService.open(EmailDialogComponent, { data: this.emailControl.value })
 	}
 
 }
