@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Dialog } from '@angular/cdk/dialog';
 
 
 @Component({
@@ -9,8 +8,5 @@ import { Dialog } from '@angular/cdk/dialog';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainPageComponent {
-
-	constructor(private dialogService: Dialog) {
-	}
 
 }
