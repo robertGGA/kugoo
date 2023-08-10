@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { IconComponent } from '@shared/components/ui/icon/icon.component';
 import { ButtonComponent } from '@shared/components/ui/button/button.component';
 import { PreviewCardTypes } from '@shared/components/ui/preview-card/preview-card.types';
+import { RouterLink } from '@angular/router';
 
 @Component({
 	selector: 'ku-preview-card',
 	standalone: true,
-	imports: [CommonModule, IconComponent, ButtonComponent],
+	imports: [CommonModule, IconComponent, ButtonComponent, RouterLink],
 	templateUrl: './preview-card.component.html',
 	styleUrls: ['./preview-card.component.sass'],
 	changeDetection: ChangeDetectionStrategy.OnPush
