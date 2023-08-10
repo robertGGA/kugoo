@@ -34,3 +34,37 @@ main
 			@include flex-column
 			margin-top: 81px
 
+.accordion
+	width: 100%
+	display: flex
+	justify-content: space-between
+	align-items: center
+	cursor: pointer
+	user-select: none
+
+	&-closed
+		padding: 26px 0
+
+	span
+		@include content-16
+		font-weight: 500
+
+	button
+		background: none
+		border: none
+		display: flex
+
+	&-body
+		background-color: white
+
+		div
+			margin-top: 24px
+
+	&-wrapper
+		padding: 26px 0
+		border-bottom: 1px solid $c-gray-200
+		overflow: hidden
+
+
+
+

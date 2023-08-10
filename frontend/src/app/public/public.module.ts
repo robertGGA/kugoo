@@ -8,6 +8,7 @@ import { ButtonComponent } from '@shared/components/ui/button/button.component';
 import {AccordionComponent} from "@shared/components/ui/accordion/accordion.component";
 import { AccordionHeaderComponent } from '@shared/components/ui/accordion/accordion-header/accordion-header.component';
 import { AccordionBodyComponent } from '@shared/components/ui/accordion/accordion-body/accordion-body.component';
+import { IconComponent } from '@shared/components/ui/icon/icon.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AccordionBodyComponent } from '@shared/components/ui/accordion/accordio
 		ButtonComponent,
 		AccordionComponent,
 		AccordionHeaderComponent,
-		AccordionBodyComponent
+		AccordionBodyComponent,
+		IconComponent
 	]
 })
 export class PublicModule {
