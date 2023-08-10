@@ -25,9 +25,9 @@
 	</div>
 
 	<div class='card-description'>
-		<h4>
+		<a routerLink='scooters/{{cardData.id}}'>
 			{{cardData.name}}
-		</h4>
+		</a>
 
 		<div
 			*ngIf='cardData.specs'
