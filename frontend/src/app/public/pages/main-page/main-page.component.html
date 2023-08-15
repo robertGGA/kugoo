@@ -40,12 +40,15 @@
 	</section>
 
 	<section>
-		<ku-accordion class='accordion-wrapper'>
+		<ku-accordion
+			#accordion
+			class='accordion-wrapper'
+		>
 			<ku-accordion-header class='accordion'>
 				<span>
 					Есть ли гарантия того, что придет именно то, что было заказано? А если я оплачу и товар не придет?
 				</span>
-				<button>
+				<button [class.accordion-active]='accordion.isOpen$ | async'>
 					<ku-icon
 						svgIcon='akar-plus'
 						widthIcon='20'
@@ -70,12 +73,12 @@
 				В городах, где есть наш сервисный центр ремонт проводится за 3-7 дней.
 			</ku-accordion-body>
 		</ku-accordion>
-		<ku-accordion class='accordion-wrapper'>
+		<ku-accordion #accordionSecond  class='accordion-wrapper'>
 			<ku-accordion-header class='accordion'>
 				<span>
 					У меня в городе самокаты Kugoo дешевле. Почему?
 				</span>
-				<button>
+				<button [class.accordion-active]='accordionSecond.isOpen$ | async'>
 					<ku-icon
 						svgIcon='akar-plus'
 						widthIcon='20'
@@ -100,12 +103,14 @@
 				В городах, где есть наш сервисный центр ремонт проводится за 3-7 дней.
 			</ku-accordion-body>
 		</ku-accordion>
-		<ku-accordion class='accordion-wrapper'>
+
+		<ku-accordion #accordionThird class='accordion-wrapper'>
 			<ku-accordion-header class='accordion'>
 				<span>
 					Как осуществляется сервисное обслуживание в моем городе? Где гарантия, что меня обслужат?
 				</span>
-				<button>
+				<button [class.accordion-active]='accordionThird.isOpen$ | async'>
+
 					<ku-icon
 						svgIcon='akar-plus'
 						widthIcon='20'
@@ -130,12 +135,14 @@
 				В городах, где есть наш сервисный центр ремонт проводится за 3-7 дней.
 			</ku-accordion-body>
 		</ku-accordion>
-		<ku-accordion class='accordion-wrapper'>
+
+
+		<ku-accordion #accordionFourth class='accordion-wrapper'>
 			<ku-accordion-header class='accordion'>
 				<span>
 					Где находятся пункты самовывоза в моем городе?
 				</span>
-				<button>
+				<button [class.accordion-active]='accordionFourth.isOpen$ | async'>
 					<ku-icon
 						svgIcon='akar-plus'
 						widthIcon='20'
