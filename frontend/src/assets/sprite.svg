@@ -74,6 +74,8 @@
 	
 </symbol><symbol id="menu" viewBox="0 0 14 15">
 	<path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M.75 1.25h13.5M.75 7.25h13.5M7.672 13.25h6.577"/>
+</symbol><symbol id="outlined-home">
+	<path fill="currentColor" d="m13.864 7.398-5.66-5.657-.38-.38a.461.461 0 0 0-.65 0l-6.04 6.037a.936.936 0 0 0-.275.674A.947.947 0 0 0 1.81 9h.623v4.771h10.133V9h.636a.933.933 0 0 0 .867-.58.932.932 0 0 0-.205-1.021ZM8.32 12.716H6.68V9.727h1.64v2.989Zm3.192-4.771v4.77H9.257v-3.34a.586.586 0 0 0-.586-.585H6.328a.586.586 0 0 0-.586.586v3.34H3.487V7.945H2.081l5.42-5.416.338.338 5.08 5.078h-1.407Z"/>
 </symbol><symbol id="plus" viewBox="0 0 8 8">
 	<path fill="currentColor" d="M0 4.653h8V3.347H0v1.306ZM3.299 0v8h1.402V0H3.299Z"/>
 </symbol><symbol id="poly" viewBox="0 0 6 6">

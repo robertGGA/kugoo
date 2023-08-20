@@ -16,17 +16,17 @@ const urlDescription: BreadCrumbsData = {
 	standalone: true
 })
 export class BreadCrumbUrlPipe implements PipeTransform {
-	transform(value: string, separator?: string, ...args: unknown[]): string {
+	transform(value: string, isLast?: boolean, separator?: string): string {
 		const separatedUrl = value.split(separator ?? ' ');
 
 		return separatedUrl
 			.filter(urlItem => urlDescription[urlItem as keyof BreadCrumbsData] || Number(urlItem))
-			.map(item => {
+			.map((item) => {
 				if (Number(item)) {
 					return item;
 				}
 				const urlKey = urlDescription[item as keyof BreadCrumbsData];
-				return urlKey + '/'
+				return isLast ? urlKey : `${urlKey}\xa0/\xa0`
 			}).toString();
 	}
 
