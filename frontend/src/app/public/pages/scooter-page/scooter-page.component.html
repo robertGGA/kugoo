@@ -1,6 +1,11 @@
 <main>
-	<div>
-		<img />
+	<div class='image-section'>
+		<div class='image-preview'>
+			<img [src]='chooseImage' />
+		</div>
+		<div class='image-card-wrapper'>
+			<img *ngFor='let img of images;' (click)='changeImage(img)' class='image-card' [src]='img' />
+		</div>
 	</div>
 
 	<div>
