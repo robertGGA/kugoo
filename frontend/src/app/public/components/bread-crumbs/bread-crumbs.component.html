@@ -1,0 +1,5 @@
+<a *ngFor='let link of route' [routerLink]='validUrl(link)'>
+	{{link | breadCrumbUrl}}
+</a>
+
+<router-outlet></router-outlet>

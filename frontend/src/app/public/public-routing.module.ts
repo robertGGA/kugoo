@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from '@shared/components/layouts/layout/layout.component';
 import { MainPageComponent } from '@app/public/pages/main-page/main-page.component';
 import { NotFoundPageComponent } from '@shared/components/pages/not-found-page/not-found-page.component';
+import { ScooterPageComponent } from '@app/public/pages/scooter-page/scooter-page.component';
+import { BreadCrumbsComponent } from '@app/public/components/bread-crumbs/bread-crumbs.component';
 
 const routes: Routes = [
 	{
@@ -12,6 +14,21 @@ const routes: Routes = [
 			{
 				path: '',
 				component: MainPageComponent,
+			},
+			{
+				component: BreadCrumbsComponent,
+				path: '',
+				children: [
+					{
+						path: 'catalog',
+						children: [
+							{
+								path: 'scooter/:id',
+								component: ScooterPageComponent
+							}
+						]
+					},
+				]
 			},
 			{
 				path: '**',
