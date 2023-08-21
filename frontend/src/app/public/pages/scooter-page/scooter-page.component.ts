@@ -9,6 +9,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 export class ScooterPageComponent {
 	images: Array<string> = [];
 	chooseImage: string = 'assets/preview-images/samokat.png';
+	isExists: boolean = true;
 
 	constructor() {
 		this.images = [
@@ -24,9 +25,5 @@ export class ScooterPageComponent {
 
 	changeImage(url: string): void {
 		this.chooseImage = url;
-	}
-
-	identify(item: string): string {
-		return item;
 	}
 }
