@@ -13,6 +13,7 @@ import { ScooterPageComponent } from './pages/scooter-page/scooter-page.componen
 import { BreadCrumbsComponent } from './components/bread-crumbs/bread-crumbs.component';
 import { BreadCrumbUrlPipe } from '@shared/pipes/bread-crumb-url.pipe';
 import { CatalogPageComponent } from './pages/catalog-page/catalog-page.component';
+import { ServiceCardComponent } from './pages/main-page/components/service-card/service-card.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { CatalogPageComponent } from './pages/catalog-page/catalog-page.componen
 		ScooterPageComponent,
 		BreadCrumbsComponent,
 		CatalogPageComponent,
+  ServiceCardComponent,
 
 	],
 	imports: [
