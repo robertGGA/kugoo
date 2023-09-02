@@ -1,22 +1,34 @@
 @import "mixins"
 
 main
-	@include width-1200
+	@include width-1380
 	display: flex
 	flex-direction: column
 	row-gap: 100px
 
-	section:last-child
+section
+	@include width-1200
+
+	&:last-child
 		margin-bottom: 73px
 
 
 .scooter
+
+	&-button
+		&-show
+			margin: 0 auto
+
+			ku-button
+				padding: 15px 25px
+				border-radius: 5px
+
 	&-list
 		display: grid
 		justify-content: center
 		grid-template-columns: repeat(auto-fill, 255px)
 		gap: 30px
-		margin: 50px 0 30px 0
+		margin: 50px 0 50px 0
 
 		&-title
 			@include flex-row
@@ -81,7 +93,7 @@ main
 	&-service-card
 		@include flex-row
 		justify-content: space-between
-		margin-top: 110px
+		margin-top: 10px
 
 		@include xl
 			align-items: center
@@ -155,6 +167,48 @@ main
 			ku-icon
 				display: flex
 				margin-left: 10px
+
+.delivery-slide
+	@include flex-row
+	justify-content: flex-end
+	background: radial-gradient(#595959, #3B3E46)
+	width: 100%
+	padding: 67px 172px
+
+	&-section
+		@include width-1380
+		margin: 0 auto
+
+
+	img
+		position: absolute
+		width: 850px
+		left: 10px
+		bottom: 0
+
+	&-link
+		margin-top: 27px
+		padding: 15px 25px
+		background: white
+		border-radius: 6px
+		width: fit-content
+
+		&:hover
+			opacity: 0.7
+
+
+	&-content
+		height: 100%
+		@include flex-column
+		max-width: 451px
+		z-index: 1
+
+		h1
+			@include h1
+			color: white
+			margin-top: 27px
+			text-transform: uppercase
+
 
 
 

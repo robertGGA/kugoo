@@ -10,6 +10,8 @@ $screen-lg-min: 1024px
 /* Extra Large (xl) */
 $screen-xl-min: 1200px
 
+$screen-xll-min: 1380px
+
 
 @mixin sm
 	@media (max-width: #{$screen-sm-min})
@@ -21,6 +23,10 @@ $screen-xl-min: 1200px
 
 @mixin xl
 	@media (max-width: #{$screen-xl-min})
+		@content
+
+@mixin xll
+	@media (max-width: #{$screen-xll-min})
 		@content
 
 @mixin lg
