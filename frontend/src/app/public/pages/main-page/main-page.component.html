@@ -39,6 +39,28 @@
 		</div>
 	</section>
 
+	<section>
+		<ku-service-card>
+			<div class='service-card'>
+				<h2 class='service-card-title'>
+					Подбор модели электросамоката
+				</h2>
+				<p>
+					Пройдите тест и выберите электросамокат по своим критериям
+				</p>
+
+				<a routerLink='/'>
+					Подобрать модель
+					<ku-icon svgIcon='arrow-4' widthIcon='12' heightIcon='10'>
+
+					</ku-icon>
+				</a>
+			</div>
+			<img alt='Card preview image' class='service-card-image' src='assets/service-card/img.png'>
+			<div class='service-card-background'></div>
+		</ku-service-card>
+	</section>
+
 	<section class='section-accordions'>
 		<h1>
 			Отвечаем на вопросы покупателей
@@ -76,7 +98,10 @@
 				В городах, где есть наш сервисный центр ремонт проводится за 3-7 дней.
 			</ku-accordion-body>
 		</ku-accordion>
-		<ku-accordion #accordionSecond  class='accordion-wrapper'>
+		<ku-accordion
+			#accordionSecond
+			class='accordion-wrapper'
+		>
 			<ku-accordion-header class='accordion'>
 				<span>
 					У меня в городе самокаты Kugoo дешевле. Почему?
@@ -107,7 +132,10 @@
 			</ku-accordion-body>
 		</ku-accordion>
 
-		<ku-accordion #accordionThird class='accordion-wrapper'>
+		<ku-accordion
+			#accordionThird
+			class='accordion-wrapper'
+		>
 			<ku-accordion-header class='accordion'>
 				<span>
 					Как осуществляется сервисное обслуживание в моем городе? Где гарантия, что меня обслужат?
@@ -140,7 +168,10 @@
 		</ku-accordion>
 
 
-		<ku-accordion #accordionFourth class='accordion-wrapper'>
+		<ku-accordion
+			#accordionFourth
+			class='accordion-wrapper'
+		>
 			<ku-accordion-header class='accordion'>
 				<span>
 					Где находятся пункты самовывоза в моем городе?

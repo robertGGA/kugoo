@@ -90,5 +90,60 @@ main
 			max-width: 456px
 
 
+.service
+
+	&-card
+		display: flex
+		flex-direction: column
+		max-width: 258px
+
+		&-background
+			position: absolute
+			right: 0
+			width: 33%
+			height: 130%
+			top: 0
+			z-index: 0
+			border-bottom-left-radius: 90%
+			border-top-left-radius: 45%
+			background-color: $c-primary-purple
+
+		&-image
+			right: 0
+			width: 255px
+			top: 0
+			position: absolute
+			z-index: 1
+
+			&:before
+				content: ''
+				height: 100%
+				width: 50px
+				position: absolute
+				background-color: $c-primary-purple
+
+		&-title
+			@include h2
+			word-break: break-word
+			text-transform: uppercase
+
+		p
+			@include content-16
+			margin-top: 10px
+
+		a
+			display: flex
+			align-items: center
+			margin-top: 22px
+			color: $c-primary-purple
+
+			&:hover
+				color: $c-primary-purple-hovered
+
+			ku-icon
+				display: flex
+				margin-left: 10px
+
+
 
 
