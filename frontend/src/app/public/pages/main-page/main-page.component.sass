@@ -78,6 +78,18 @@ main
 
 .section
 
+	&-service-card
+		@include flex-row
+		justify-content: space-between
+		margin-top: 110px
+
+		@include xl
+			align-items: center
+			@include flex-column
+
+			ku-service-card:last-child
+				margin-top: 30px
+
 	&-accordions
 		display: flex
 		flex-direction: column

@@ -14,7 +14,7 @@ export class ScooterPageComponent {
 	constructor() {
 		this.images = [
 			'assets/preview-images/small/img.png',
-			'assets/preview-images/small/img_1.png',
+			'assets/preview-images/small/woman.png',
 			'assets/preview-images/small/img_2.png',
 			'assets/preview-images/small/img_3.png',
 			'assets/preview-images/small/img_4.png',
