@@ -25,8 +25,8 @@ import { ChipComponent } from '@shared/components/ui/chip/chip.component';
 		ScooterPageComponent,
 		BreadCrumbsComponent,
 		CatalogPageComponent,
-  ServiceCardComponent,
-  SlideComponent,
+		ServiceCardComponent,
+		SlideComponent,
 
 	],
 	imports: [
