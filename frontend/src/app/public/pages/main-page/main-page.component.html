@@ -37,12 +37,38 @@
 				[cardData]='card'
 			></ku-preview-card>
 		</div>
+		<div class='scooter-button-show'>
+			<ku-button
+				theme='empty'
+			>
+				Смотреть все
+			</ku-button>
+		</div>
 	</section>
 
 	<section class='section-service-card'>
 		<ng-container *ngFor='let card of serviceCards'>
 			<ng-container *ngTemplateOutlet='serviceCard; context: {$implicit: card}'></ng-container>
 		</ng-container>
+	</section>
+
+	<section class='delivery-slide-section'>
+		<ku-slide class='delivery-slide'>
+			<img src='assets/slides/drone.png'>
+			<p></p>
+			<div class='delivery-slide-content'>
+				<ku-chip>
+					Акция
+				</ku-chip>
+				<h1>
+					Бесплатная доставка электросамокатов по России до 01.09
+				</h1>
+
+				<a class='delivery-slide-link' routerLink='/'>
+					Подробнее
+				</a>
+			</div>
+		</ku-slide>
 	</section>
 
 	<section class='section-accordions'>
@@ -189,7 +215,10 @@
 
 </main>
 
-<ng-template #serviceCard let-data >
+<ng-template
+	#serviceCard
+	let-data
+>
 	<ku-service-card>
 		<div class='service-card'>
 			<h2 class='service-card-title'>

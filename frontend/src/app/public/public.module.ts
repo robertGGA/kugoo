@@ -14,6 +14,8 @@ import { BreadCrumbsComponent } from './components/bread-crumbs/bread-crumbs.com
 import { BreadCrumbUrlPipe } from '@shared/pipes/bread-crumb-url.pipe';
 import { CatalogPageComponent } from './pages/catalog-page/catalog-page.component';
 import { ServiceCardComponent } from './pages/main-page/components/service-card/service-card.component';
+import { SlideComponent } from './pages/main-page/components/slide/slide.component';
+import { ChipComponent } from '@shared/components/ui/chip/chip.component';
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import { ServiceCardComponent } from './pages/main-page/components/service-card/
 		BreadCrumbsComponent,
 		CatalogPageComponent,
   ServiceCardComponent,
+  SlideComponent,
 
 	],
 	imports: [
@@ -35,7 +38,8 @@ import { ServiceCardComponent } from './pages/main-page/components/service-card/
 		AccordionHeaderComponent,
 		AccordionBodyComponent,
 		IconComponent,
-		BreadCrumbUrlPipe
+		BreadCrumbUrlPipe,
+		ChipComponent
 	]
 })
 export class PublicModule {

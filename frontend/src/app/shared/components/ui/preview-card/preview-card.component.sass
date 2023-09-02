@@ -1,4 +1,6 @@
+@use "themes/chips/themes"
 @import "mixins"
+
 
 \:host
 	max-width: 255px
@@ -95,20 +97,6 @@
 	width: 100%
 	height: 182px
 
-
-.chip
-	padding: 4px 9px
-	color: white
-	border-radius: 5px
-
-	&-hit
-		@extend .chip
-		background: $c-red
-		text-transform: uppercase
-
-	&-new
-		@extend .chip
-		background-color: $c-green
 
 
 .buy-button

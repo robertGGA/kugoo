@@ -2,7 +2,7 @@
 	<div class='card-image-container'>
 		<div class='card-header'>
 			<ng-container *ngIf='isNew !== undefined'>
-				<p [className]='isNew ? "chip-new" : "chip-hit"'>
+				<p [className]='isNew ? "chip-green" : "chip-red chip-active"'>
 					{{isNew ? 'Новинка' : 'Хит'}}
 				</p>
 			</ng-container>
