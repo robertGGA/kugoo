@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { PreviewCardTypes } from '@shared/components/ui/preview-card/preview-card.types';
+import { ServiceCardTypes } from '@app/public/pages/main-page/components/service-card/service-card.types';
 
 
 @Component({
@@ -54,4 +55,21 @@ export class MainPageComponent {
 			name: 'Kogoo G-Max'
 		}
 	];
+
+	get serviceCards(): Array<ServiceCardTypes> {
+		return [
+			{
+				title: 'Подбор модели электросамоката',
+				description: 'Пройдите тест и выберите электросамокат по своим критериям',
+				link: '/',
+				image: 'assets/service-card/img.png'
+			},
+			{
+				title: 'Сервисное обслуживание',
+				description: 'Крупнейший сервисный центр в России для продуктов Kugoo',
+				link: '/',
+				image: 'assets/service-card/woman.png'
+			}
+		]
+	}
 }

@@ -33,32 +33,16 @@
 		</div>
 		<div class='scooter-list'>
 			<ku-preview-card
-				*ngFor='let card of cardData'
+				*ngFor='let card of cardData; '
 				[cardData]='card'
 			></ku-preview-card>
 		</div>
 	</section>
 
-	<section>
-		<ku-service-card>
-			<div class='service-card'>
-				<h2 class='service-card-title'>
-					Подбор модели электросамоката
-				</h2>
-				<p>
-					Пройдите тест и выберите электросамокат по своим критериям
-				</p>
-
-				<a routerLink='/'>
-					Подобрать модель
-					<ku-icon svgIcon='arrow-4' widthIcon='12' heightIcon='10'>
-
-					</ku-icon>
-				</a>
-			</div>
-			<img alt='Card preview image' class='service-card-image' src='assets/service-card/img.png'>
-			<div class='service-card-background'></div>
-		</ku-service-card>
+	<section class='section-service-card'>
+		<ng-container *ngFor='let card of serviceCards'>
+			<ng-container *ngTemplateOutlet='serviceCard; context: {$implicit: card}'></ng-container>
+		</ng-container>
 	</section>
 
 	<section class='section-accordions'>
@@ -204,3 +188,33 @@
 	</section>
 
 </main>
+
+<ng-template #serviceCard let-data >
+	<ku-service-card>
+		<div class='service-card'>
+			<h2 class='service-card-title'>
+				{{data.title}}
+			</h2>
+			<p>
+				{{data.description}}
+			</p>
+
+			<a [routerLink]='data.link'>
+				Подобрать модель
+				<ku-icon
+					svgIcon='arrow-4'
+					widthIcon='12'
+					heightIcon='10'
+				>
+
+				</ku-icon>
+			</a>
+		</div>
+		<img
+			alt='Card preview image'
+			class='service-card-image'
+			[src]='data.image'
+		>
+		<div class='service-card-background'></div>
+	</ku-service-card>
+</ng-template>
