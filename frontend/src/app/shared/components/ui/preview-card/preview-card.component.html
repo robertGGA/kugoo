@@ -1,10 +1,10 @@
 <div class='card-container'>
 	<div class='card-image-container'>
 		<div class='card-header'>
-			<ng-container *ngIf='isNew !== undefined'>
-				<p [className]='isNew ? "chip-green" : "chip-red chip-active"'>
+			<ng-container *ngIf='isNew !== undefined; else unknownChip'>
+				<ku-chip [options]='chipOptions' [theme]='isNew ? "green" : "red"'>
 					{{isNew ? 'Новинка' : 'Хит'}}
-				</p>
+				</ku-chip>
 			</ng-container>
 
 			<button>
@@ -113,3 +113,9 @@
 		</ku-button>
 	</div>
 </div>
+
+
+<ng-template #unknownChip>
+	<div>
+	</div>
+</ng-template>
