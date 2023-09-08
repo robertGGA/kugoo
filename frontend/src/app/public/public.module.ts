@@ -17,6 +17,7 @@ import { ServiceCardComponent } from './pages/main-page/components/service-card/
 import { SlideComponent } from './pages/main-page/components/slide/slide.component';
 import { ChipComponent } from '@shared/components/ui/chip/chip.component';
 import { ManagerBusinessCardComponent } from './components/manager-business-card/manager-business-card.component';
+import { CategoryCardComponent } from './pages/main-page/components/category-card/category-card.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ManagerBusinessCardComponent } from './components/manager-business-card
 		ServiceCardComponent,
 		SlideComponent,
 		ManagerBusinessCardComponent,
+  CategoryCardComponent,
 
 	],
 	imports: [
