@@ -12,6 +12,14 @@ section
 	&:last-child
 		margin-bottom: 73px
 
+h1
+	@include h1
+	text-transform: uppercase
+
+.section-title-wrapper
+	@include flex-row
+	justify-content: space-between
+	align-items: center
 
 .scooter
 
@@ -34,9 +42,6 @@ section
 			@include flex-row
 			justify-content: space-between
 
-			h1
-				@include h1
-				text-transform: uppercase
 
 			div
 				@include flex-row
