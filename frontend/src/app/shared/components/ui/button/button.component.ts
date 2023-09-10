@@ -15,6 +15,7 @@ import { ButtonThemes } from '@shared/components/ui/button/models/button.types';
 	templateUrl: './button.component.html',
 	styleUrls: ['./button.component.sass'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
+
 })
 export class ButtonComponent {
 

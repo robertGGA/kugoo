@@ -22,7 +22,6 @@ export class CategoryCardComponent implements AfterViewInit {
 	constructor(private el: ElementRef,
 				private renderer: Renderer2,
 				private router: Router) {
-		console.log(el.nativeElement);
 	}
 
 	@HostListener('click') listenClick() {
