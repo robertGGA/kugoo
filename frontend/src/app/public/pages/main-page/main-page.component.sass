@@ -9,6 +9,9 @@ main
 section
 	@include width-1200
 
+	@include sm
+		display: none !important
+
 	&:last-child
 		margin-bottom: 73px
 
@@ -20,6 +23,12 @@ h1
 	@include flex-row
 	justify-content: space-between
 	align-items: center
+
+	@include md
+		flex-direction: column
+
+		h1
+			margin-bottom: 15px
 
 .scooter
 
@@ -41,6 +50,13 @@ h1
 		&-title
 			@include flex-row
 			justify-content: space-between
+
+			@include md
+				flex-direction: column
+				align-items: center
+
+				h1
+					margin-bottom: 15px
 
 
 			div
@@ -106,6 +122,18 @@ h1
 
 			ku-service-card:last-child
 				margin-top: 30px
+
+	&-category
+
+		&-card
+			&-button
+				display: flex
+				justify-content: center
+
+			ku-button
+				margin: 0 auto
+				padding: 15px 25px
+				border-radius: 5px
 
 	&-accordions
 		display: flex
@@ -173,6 +201,10 @@ h1
 				display: flex
 				margin-left: 10px
 
+.wide-section
+	@include width-1380
+	margin: 0 auto
+
 .delivery-slide
 	@include flex-row
 	justify-content: flex-end
@@ -183,7 +215,6 @@ h1
 	&-section
 		@include width-1380
 		margin: 0 auto
-
 
 	img
 		position: absolute

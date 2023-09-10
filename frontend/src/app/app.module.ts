@@ -5,8 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from '@core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { IconComponent } from '@shared/components/ui/icon/icon.component';
-import { ButtonComponent } from '@shared/components/ui/button/button.component';
 
 @NgModule({
 	declarations: [
@@ -17,8 +15,6 @@ import { ButtonComponent } from '@shared/components/ui/button/button.component';
 		AppRoutingModule,
 		CoreModule,
 		BrowserAnimationsModule,
-		IconComponent,
-		ButtonComponent
 	],
 	providers: [],
 	bootstrap: [AppComponent]
