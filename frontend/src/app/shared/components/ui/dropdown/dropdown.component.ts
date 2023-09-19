@@ -1,18 +1,16 @@
 import {
-	AfterViewInit,
 	ChangeDetectionStrategy,
 	ChangeDetectorRef,
-	Component, ContentChild,
-	Input, OnInit,
+	Component,
+	Input,
 	Optional,
 	Self,
-	TemplateRef, ViewChild, ViewChildren, ViewContainerRef
+	TemplateRef, ViewContainerRef
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { DropdownThemes } from '@shared/components/ui/dropdown/models/dropdown.types';
 import { BehaviorSubject } from 'rxjs';
-import { DropdownOptionComponent } from '@shared/components/ui/dropdown-option/dropdown-option.component';
 import { ClickOutsideDirective } from '@shared/directives/click-outside.directive';
 import { IconComponent } from '@shared/components/ui/icon/icon.component';
 
@@ -48,16 +46,11 @@ export class DropdownComponent<T> implements ControlValueAccessor {
 	private _options: Array<T> | null = null;
 	private _value: T | null = null;
 
-	constructor(protected cdr: ChangeDetectorRef,
-				@Self() @Optional() public ngControl: NgControl,
+	constructor(@Self() @Optional() public ngControl: NgControl,
 				private viewContainerRef: ViewContainerRef) {
 		if (this.ngControl) {
 			this.ngControl.valueAccessor = this;
 		}
-
-		this.isClicked$.subscribe(value => {
-			console.log(value);
-		})
 	}
 
 	registerOnChange(fn: any): void {
