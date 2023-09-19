@@ -1,11 +1,10 @@
 import {
 	ChangeDetectionStrategy,
-	ChangeDetectorRef,
 	Component,
 	Input,
 	Optional,
 	Self,
-	TemplateRef, ViewContainerRef
+	TemplateRef
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
@@ -46,8 +45,7 @@ export class DropdownComponent<T> implements ControlValueAccessor {
 	private _options: Array<T> | null = null;
 	private _value: T | null = null;
 
-	constructor(@Self() @Optional() public ngControl: NgControl,
-				private viewContainerRef: ViewContainerRef) {
+	constructor(@Self() @Optional() public ngControl: NgControl) {
 		if (this.ngControl) {
 			this.ngControl.valueAccessor = this;
 		}
