@@ -10,6 +10,8 @@ import { ServiceCardTypes } from '@app/public/pages/main-page/components/service
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainPageComponent {
+
+
 	cardData: PreviewCardTypes[] = [
 		{
 			id: '1',
@@ -55,6 +57,8 @@ export class MainPageComponent {
 			name: 'Kogoo G-Max'
 		}
 	];
+
+
 
 	get serviceCards(): Array<ServiceCardTypes> {
 		return [

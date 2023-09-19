@@ -7,6 +7,8 @@ import { AutocompleteComponent } from '@shared/components/ui/autocomplete/autoco
 import { DropdownComponent } from '@shared/components/ui/dropdown/dropdown.component';
 import { DropdownOptionComponent } from '@shared/components/ui/dropdown-option/dropdown-option.component';
 import { RouterLink } from '@angular/router';
+import { DialogService } from '@core/services/dialog.service';
+import { DialogContainerComponent } from '@shared/components/modals/dialog-container/dialog-container.component';
 
 @Component({
 	selector: 'ku-header',
@@ -21,9 +23,20 @@ export class HeaderComponent {
 	testOptions: { id: string, name: string }[] =
 		[{ id: '0', name: 'Самокаты' }, { id: '1', name: 'Аксессуары' }]
 
+	constructor(private dialog: DialogService) {
+	}
+
+	openCart(): void {
+		const resultClosed = this.dialog.open(DialogContainerComponent);
+
+		resultClosed.afterClosed().subscribe(value => {
+			console.log(value);
+		})
+	}
+
+
 	click() {
 		console.log('hi i opened')
 	}
 
-	protected readonly DropdownOptionComponent = DropdownOptionComponent;
 }

@@ -47,4 +47,27 @@ a
 	text-decoration: none
 	color: $c-black
 
+.dialog
+	&-backdrop
+		display: block
+		position: fixed
+		background: rgba($c-gray-200, 0.4)
+		width: 100vw
+		height: 100vh
+		top: 0
+		overflow-y: hidden
+		z-index: 300
+
+	&-panel
+		display: block
+		position: fixed !important
+		margin: auto
+		height: fit-content
+		width: fit-content
+		background: none
+		z-index: 301
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+
 
