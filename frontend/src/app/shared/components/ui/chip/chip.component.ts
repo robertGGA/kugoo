@@ -34,7 +34,6 @@ export class ChipComponent implements AfterViewInit {
 	ngAfterViewInit(): void {
 		if (this.options && this.chip) {
 			if (this.options.isUpperCase) {
-				console.log(this.options.isUpperCase)
 				this.renderer.setStyle(this.chip?.nativeElement, "text-transform", 'uppercase')
 			}
 		}
