@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ButtonComponent } from '@shared/components/ui/button/button.component';
@@ -6,8 +6,8 @@ import { emailRegex } from '@app/utils/regex.helper';
 import { IconComponent } from '@shared/components/ui/icon/icon.component';
 import { DownloadLinkComponent } from '@shared/components/ui/download-link/download-link.component';
 import { RouterLink } from '@angular/router';
-import { Dialog, DialogModule } from '@angular/cdk/dialog';
 import { EmailDialogComponent } from '@app/public/components/modals/email-dialog/email-dialog.component';
+import { DialogService } from '@core/services/dialog.service';
 
 export interface LinksButtonInterface {
 	link: string,
@@ -19,7 +19,7 @@ export interface LinksButtonInterface {
 @Component({
 	selector: 'ku-footer',
 	standalone: true,
-	imports: [CommonModule, ButtonComponent, ReactiveFormsModule, IconComponent, DownloadLinkComponent, RouterLink, DialogModule],
+	imports: [CommonModule, ButtonComponent, ReactiveFormsModule, IconComponent, DownloadLinkComponent, RouterLink],
 	templateUrl: './footer.component.html',
 	styleUrls: ['./footer.component.sass'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
@@ -45,7 +45,7 @@ export class FooterComponent {
 			count: 3921
 		}]
 
-	constructor(private dialogService: Dialog) {
+	constructor(private dialogService: DialogService) {
 		this.emailControl = new FormControl<string | null>(null, [Validators.pattern(emailRegex), Validators.required]);
 	}
 
