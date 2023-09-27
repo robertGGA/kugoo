@@ -7,7 +7,7 @@ import {
 	TemplateRef,
 	ViewContainerRef
 } from '@angular/core';
-import { TooltipContainerComponent } from '@shared/components/modals/tooltip-container/tooltip-container.component';
+import { TooltipContainerComponent } from '@shared/components/modals/constructor/tooltip-container/tooltip-container.component';
 
 @Directive({
 	selector: '[kuTooltip]',

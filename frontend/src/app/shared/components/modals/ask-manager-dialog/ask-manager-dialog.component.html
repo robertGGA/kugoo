@@ -1,7 +1,32 @@
-<div class='dialog'>
-	<div class='dialog-content'>
+<ku-dialog-container>
+	<ku-dialog-header
+		class='dialog-header'
+		(onCloseHandler)='closeModal()'
+	>
+	</ku-dialog-header>
+	<ku-dialog-body>
+		<div class='dialog-content'>
+			<div class='dialog-content-block__first'>
+				<h1>
+					Менеджер позвонит вам
+					в течение 5 минут
+				</h1>
+				<p>
+					ответит на все вопросы и проконсультирует по продуктам Kugoo
+				</p>
 
-	</div>
+				<form>
+					<ku-input [formControl]='phoneControl' placeholder='hi'></ku-input>
+				</form>
+			</div>
+			<div>
+				<img
+					class='dialog-image'
+					alt='manager-avatar'
+					src=''
+				/>
+			</div>
+		</div>
+	</ku-dialog-body>
 
-	<img class='dialog-image' alt='manager-avatar' src='' />
-</div>
+</ku-dialog-container>

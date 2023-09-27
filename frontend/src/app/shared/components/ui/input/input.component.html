@@ -1,0 +1,15 @@
+<div class='ku-input-wrapper'>
+	<span
+		class='ku-input-placeholder'
+		*ngIf='placeholder'
+		[class.ku-input-placeholder-touched]='isTouched && placeholder'
+		[class.ku-input-floating-label]='isFloatingLabel && isTouched'
+	>
+		{{placeholder}}
+	</span>
+	<input
+		[formControl]='textControl'
+		class='ku-input'
+		(click)='swapFloating()'
+	/>
+</div>
