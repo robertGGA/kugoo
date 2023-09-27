@@ -6,8 +6,35 @@
 	max-width: 790px
 	@include flex-row
 	align-items: center
+	position: relative
+
+	& ku-input
+		padding: 15px
+
+	&-header
+		justify-content: flex-end
+		position: relative
+		top: -26px
 
 
 	&-image
 
 	&-content
+		max-width: 790px
+		width: 100%
+		@include flex-row
+		align-items: center
+
+		&-block
+
+			&__first
+				max-width: 355px
+
+				h1
+					@include h2
+					text-transform: uppercase
+					margin-bottom: 16px
+
+				p
+					@include content-16
+					max-width: 311px

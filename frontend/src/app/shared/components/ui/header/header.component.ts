@@ -8,7 +8,7 @@ import { DropdownComponent } from '@shared/components/ui/dropdown/dropdown.compo
 import { DropdownOptionComponent } from '@shared/components/ui/dropdown-option/dropdown-option.component';
 import { RouterLink } from '@angular/router';
 import { DialogService } from '@core/services/dialog.service';
-import { DialogContainerComponent } from '@shared/components/modals/dialog-container/dialog-container.component';
+import { DialogContainerComponent } from '@shared/components/modals/constructor/dialog-container/dialog-container.component';
 import { AskManagerDialogComponent } from '@shared/components/modals/ask-manager-dialog/ask-manager-dialog.component';
 import { takeUntil } from 'rxjs';
 import { DestroyService } from '@core/services/destroy.service';
