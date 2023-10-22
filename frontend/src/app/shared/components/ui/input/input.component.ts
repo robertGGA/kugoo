@@ -74,7 +74,7 @@ export class InputComponent implements ControlValueAccessor, OnInit, AfterViewIn
 	}
 
 	ngOnInit(): void {
-	}
+ 	}
 
 	ngAfterViewInit(): void {
 
