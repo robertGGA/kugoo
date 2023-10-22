@@ -1,15 +1,18 @@
 import {
+	AfterViewInit,
 	ChangeDetectionStrategy,
 	ChangeDetectorRef,
-	Component,
+	Component, ElementRef,
 	forwardRef,
-	Input, OnInit,
+	Input, OnInit, Optional, Self, ViewChild,
 	ViewEncapsulation
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { DestroyService } from '@core/services/destroy.service';
 import { takeUntil } from 'rxjs';
+import { InputTheme, SupportedTypes } from '@shared/components/ui/input/input.types';
+import { injectNgControl } from '@app/utils/NoopValueAccessor';
 
 @Component({
 	selector: 'ku-input',
@@ -20,24 +23,24 @@ import { takeUntil } from 'rxjs';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	encapsulation: ViewEncapsulation.None,
 	providers: [
-		{
-			provide: NG_VALUE_ACCESSOR,
-			useExisting: forwardRef(() => InputComponent),
-			multi: true,
-		},
 		DestroyService
 	],
 })
-export class InputComponent implements ControlValueAccessor, OnInit {
+export class InputComponent implements ControlValueAccessor, OnInit, AfterViewInit {
+	ngControl = injectNgControl();
 	@Input() placeholder: string | null = null;
 	@Input() isFloatingLabel: boolean = true;
+	@Input() type: SupportedTypes = 'text'
+	@Input() theme: InputTheme = 'primary'
+	@Input() required: boolean = false;
 
 	@Input()
 	set disabled(disabled: boolean) {
 		this.isDisabled = disabled;
 	}
 
-	protected textControl = new FormControl('');
+	@ViewChild('inputElement') input!: HTMLElement;
+
 
 	public isDisabled: boolean = false;
 	private onTouchedCallback!: () => void;
@@ -45,7 +48,8 @@ export class InputComponent implements ControlValueAccessor, OnInit {
 	isTouched: boolean = false;
 
 	constructor(private cdr: ChangeDetectorRef,
-				private destroy$: DestroyService) {
+				private destroy$: DestroyService,
+				private elRef: ElementRef) {
 	}
 
 	registerOnChange(fn: any): void {
@@ -70,13 +74,10 @@ export class InputComponent implements ControlValueAccessor, OnInit {
 	}
 
 	ngOnInit(): void {
-		this.textControl.valueChanges
-			.pipe(takeUntil(this.destroy$))
-			.subscribe(value => {
-					this.onChangeCallback(value);
-					this.onTouchedCallback();
-				}
-			)
+	}
+
+	ngAfterViewInit(): void {
+
 	}
 
 }
