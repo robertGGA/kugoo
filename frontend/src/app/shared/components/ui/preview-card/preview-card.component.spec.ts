@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { PreviewCardComponent } from './preview-card.component';
+import { PreviewCardComponent } from "./preview-card.component";
 
-describe('PreviewCardComponent', () => {
+describe("PreviewCardComponent", () => {
   let component: PreviewCardComponent;
   let fixture: ComponentFixture<PreviewCardComponent>;
 
@@ -17,7 +17,7 @@ describe('PreviewCardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

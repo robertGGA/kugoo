@@ -1,13 +1,13 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterLink } from "@angular/router";
 
 @Component({
-	selector: 'ku-dropdown-option',
+	selector: "ku-dropdown-option",
 	standalone: true,
 	imports: [CommonModule, RouterLink],
-	templateUrl: './dropdown-option.component.html',
-	styleUrls: ['./dropdown-option.component.sass'],
+	templateUrl: "./dropdown-option.component.html",
+	styleUrls: ["./dropdown-option.component.sass"],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DropdownOptionComponent {

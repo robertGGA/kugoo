@@ -6,11 +6,11 @@ import {
 	Input, OnDestroy, Renderer2,
 	TemplateRef,
 	ViewContainerRef
-} from '@angular/core';
-import { TooltipContainerComponent } from '@shared/components/modals/constructor/tooltip-container/tooltip-container.component';
+} from "@angular/core";
+import { TooltipContainerComponent } from "@shared/components/modals/constructor/tooltip-container/tooltip-container.component";
 
 @Directive({
-	selector: '[kuTooltip]',
+	selector: "[kuTooltip]",
 	standalone: true
 })
 export class TooltipDirective implements AfterViewInit, OnDestroy {
@@ -31,6 +31,17 @@ export class TooltipDirective implements AfterViewInit, OnDestroy {
 		this.registerTriggers();
 	}
 
+	ngOnDestroy(): void {
+		this.disposables.forEach(dispose => dispose());
+	}
+
+	destroyTooltipRef(): void {
+		if (this.componentRef) {
+			this.componentRef.destroy();
+			this.componentRef = null;
+		}
+	}
+
 	private initializeTooltip(): void {
 		this.componentRef = this.hostView.createComponent(TooltipContainerComponent);
 		this.component = this.componentRef.instance as TooltipContainerComponent;
@@ -44,13 +55,13 @@ export class TooltipDirective implements AfterViewInit, OnDestroy {
 	private registerTriggers(): void {
 		const el = this.elementRef.nativeElement;
 
-		const listenerEnter = this.renderer.listen(el, 'mouseenter', () => {
+		const listenerEnter = this.renderer.listen(el, "mouseenter", () => {
 			this.initializeTooltip();
 		})
 
 		this.disposables.push(listenerEnter);
 
-		const listenerLeave = this.renderer.listen(el, 'mouseleave', () => {
+		const listenerLeave = this.renderer.listen(el, "mouseleave", () => {
 			setTimeout(() => {
 				if (!this.component.isActive) {
 					this.destroyTooltipRef();
@@ -59,17 +70,6 @@ export class TooltipDirective implements AfterViewInit, OnDestroy {
 		})
 
 		this.disposables.push(listenerLeave);
-	}
-
-	destroyTooltipRef(): void {
-		if (this.componentRef) {
-			this.componentRef.destroy();
-			this.componentRef = null;
-		}
-	}
-
-	ngOnDestroy(): void {
-		this.disposables.forEach(dispose => dispose());
 	}
 
 }

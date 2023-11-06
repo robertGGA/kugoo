@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
-import { DIALOG_DATA } from '@angular/cdk/dialog';
+import { ChangeDetectionStrategy, Component, Inject } from "@angular/core";
+import { DIALOG_DATA } from "@angular/cdk/dialog";
 
 @Component({
-	selector: 'ku-email-dialog',
-	templateUrl: './email-dialog.component.html',
-	styleUrls: ['./email-dialog.component.sass'],
+	selector: "ku-email-dialog",
+	templateUrl: "./email-dialog.component.html",
+	styleUrls: ["./email-dialog.component.sass"],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EmailDialogComponent {

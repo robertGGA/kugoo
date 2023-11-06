@@ -1,13 +1,13 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { IconBase, IconSize } from '@shared/components/ui/icon/models/icon.model';
+import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { IconBase, IconSize } from "@shared/components/ui/icon/models/icon.model";
 
 @Component({
-	selector: 'ku-icon',
+	selector: "ku-icon",
 	standalone: true,
 	imports: [CommonModule],
-	templateUrl: './icon.component.html',
-	styleUrls: ['./icon.component.sass'],
+	templateUrl: "./icon.component.html",
+	styleUrls: ["./icon.component.sass"],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IconComponent implements IconBase {
@@ -59,6 +59,6 @@ export class IconComponent implements IconBase {
 	}
 
 	removeSvg(): void {
-		this.svgName = '';
+		this.svgName = "";
 	}
 }

@@ -3,49 +3,46 @@ import {
 	ChangeDetectionStrategy,
 	ChangeDetectorRef,
 	Component, ElementRef,
-	forwardRef,
-	Input, OnInit, Optional, Self, ViewChild,
+	Input, OnInit, ViewChild,
 	ViewEncapsulation
-} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, NgControl, ReactiveFormsModule } from '@angular/forms';
-import { DestroyService } from '@core/services/destroy.service';
-import { takeUntil } from 'rxjs';
-import { InputTheme, SupportedTypes } from '@shared/components/ui/input/input.types';
-import { injectNgControl } from '@app/utils/NoopValueAccessor';
+} from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { ControlValueAccessor, ReactiveFormsModule } from "@angular/forms";
+import { DestroyService } from "@core/services/destroy.service";
+import { InputTheme, SupportedTypes } from "@shared/components/ui/input/input.types";
+import { injectNgControl } from "@app/utils/NoopValueAccessor";
 
 @Component({
-	selector: 'ku-input',
+	selector: "ku-input",
 	standalone: true,
 	imports: [CommonModule, ReactiveFormsModule],
-	templateUrl: './input.component.html',
-	styleUrls: ['./input.component.sass'],
+	templateUrl: "./input.component.html",
+	styleUrls: ["./input.component.sass"],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	encapsulation: ViewEncapsulation.None,
 	providers: [
 		DestroyService
 	],
 })
-export class InputComponent implements ControlValueAccessor, OnInit, AfterViewInit {
-	ngControl = injectNgControl();
+export class InputComponent implements ControlValueAccessor {
 	@Input() placeholder: string | null = null;
-	@Input() isFloatingLabel: boolean = true;
-	@Input() type: SupportedTypes = 'text'
-	@Input() theme: InputTheme = 'primary'
-	@Input() required: boolean = false;
-
+	@Input() isFloatingLabel = true;
+	@Input() type: SupportedTypes = "text"
+	@Input() theme: InputTheme = "primary"
+	@Input() required = false;
 	@Input()
 	set disabled(disabled: boolean) {
 		this.isDisabled = disabled;
 	}
+	@ViewChild("inputElement") input!: HTMLElement;
 
-	@ViewChild('inputElement') input!: HTMLElement;
-
-
-	public isDisabled: boolean = false;
 	private onTouchedCallback!: () => void;
 	private onChangeCallback!: (value: any) => void;
-	isTouched: boolean = false;
+
+	ngControl = injectNgControl();
+	public isDisabled = false;
+	isTouched = false;
+
 
 	constructor(private cdr: ChangeDetectorRef,
 				private destroy$: DestroyService,
@@ -71,13 +68,6 @@ export class InputComponent implements ControlValueAccessor, OnInit, AfterViewIn
 	swapFloating(): void {
 		this.isTouched = !this.isTouched;
 		this.cdr.markForCheck();
-	}
-
-	ngOnInit(): void {
-	}
-
-	ngAfterViewInit(): void {
-
 	}
 
 }

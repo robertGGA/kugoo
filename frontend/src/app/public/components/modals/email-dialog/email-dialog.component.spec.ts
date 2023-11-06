@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { EmailDialogComponent } from './email-dialog.component';
+import { EmailDialogComponent } from "./email-dialog.component";
 
-describe('EmailDialogComponent', () => {
+describe("EmailDialogComponent", () => {
   let component: EmailDialogComponent;
   let fixture: ComponentFixture<EmailDialogComponent>;
 
@@ -17,7 +17,7 @@ describe('EmailDialogComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,2 +1,2 @@
-export type SupportedTypes = 'password' | 'tel' | 'text'
-export type InputTheme = 'primary' | 'default'
+export type SupportedTypes = "password" | "tel" | "text"
+export type InputTheme = "primary" | "default"

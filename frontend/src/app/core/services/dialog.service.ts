@@ -1,13 +1,13 @@
-import { inject, Injectable, Injector } from '@angular/core';
-import { DialogConfig } from '@angular/cdk/dialog';
-import { ComponentType, Overlay, OverlayRef } from '@angular/cdk/overlay';
-import { ComponentPortal } from '@angular/cdk/portal';
-import { DIALOG_DATA } from '@core/data/dialog-tokens';
-import { DialogRef } from '@core/data/dialog-ref';
-import { fromEvent } from 'rxjs';
+import { inject, Injectable, Injector } from "@angular/core";
+import { DialogConfig } from "@angular/cdk/dialog";
+import { ComponentType, Overlay, OverlayRef } from "@angular/cdk/overlay";
+import { ComponentPortal } from "@angular/cdk/portal";
+import { DIALOG_DATA } from "@core/data/dialog-tokens";
+import { DialogRef } from "@core/data/dialog-ref";
+import { fromEvent } from "rxjs";
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: "root"
 })
 export class DialogService {
 
@@ -20,8 +20,8 @@ export class DialogService {
 		const overlayRef = this.overlay.create({
 			positionStrategy,
 			hasBackdrop: config?.hasBackdrop ?? true,
-			backdropClass: config?.backdropClass ?? 'dialog-backdrop',
-			panelClass: config?.panelClass ?? 'dialog-panel'
+			backdropClass: config?.backdropClass ?? "dialog-backdrop",
+			panelClass: config?.panelClass ?? "dialog-panel"
 		});
 		const dialogRef = new DialogRef(overlayRef);
 
@@ -40,7 +40,7 @@ export class DialogService {
 	}
 
 	private disposeDialog(overlayRef: OverlayRef): void {
-		fromEvent(overlayRef.backdropElement!, 'click').subscribe(() => {
+		fromEvent(overlayRef.backdropElement!, "click").subscribe(() => {
 			overlayRef.dispose();
 		})
 	}

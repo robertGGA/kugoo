@@ -6,13 +6,13 @@ import {
 	HostListener,
 	Input,
 	Renderer2
-} from '@angular/core';
-import { Router } from '@angular/router';
+} from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
-	selector: 'ku-category-card',
-	templateUrl: './category-card.component.html',
-	styleUrls: ['./category-card.component.sass'],
+	selector: "ku-category-card",
+	templateUrl: "./category-card.component.html",
+	styleUrls: ["./category-card.component.sass"],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CategoryCardComponent implements AfterViewInit {
@@ -24,7 +24,7 @@ export class CategoryCardComponent implements AfterViewInit {
 				private router: Router) {
 	}
 
-	@HostListener('click') listenClick() {
+	@HostListener("click") listenClick() {
 		if (this.routerPath) {
 			this.router.navigate([this.routerPath])
 		}
@@ -32,7 +32,7 @@ export class CategoryCardComponent implements AfterViewInit {
 
 	ngAfterViewInit(): void {
 		if (this.imagePath) {
-			this.renderer.setStyle(this.el.nativeElement, 'background-image', `url(${this.imagePath})`)
+			this.renderer.setStyle(this.el.nativeElement, "background-image", `url(${this.imagePath})`)
 		}
 	}
 

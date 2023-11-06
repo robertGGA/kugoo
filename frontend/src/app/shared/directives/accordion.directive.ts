@@ -1,13 +1,17 @@
-import { ContentChild, Directive, HostListener, inject, Input, OnInit, TemplateRef } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Directive, Input, OnInit } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
 
 @Directive({
-	selector: '[kuAccordion]',
+	selector: "[kuAccordion]",
 	standalone: true
 })
-export class AccordionDirective implements OnInit {
+export class AccordionDirective  {
 
 	isOpen$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
+	private get isOpen(): boolean {
+		return this.isOpen$.value;
+	}
 
 	@Input()
 	set kuAccordion(isOpen: boolean) {
@@ -17,14 +21,4 @@ export class AccordionDirective implements OnInit {
 	toggle(): void {
 		this.isOpen$.next(!this.isOpen);
 	}
-
-
-	private get isOpen(): boolean {
-		return this.isOpen$.value;
-	}
-
-	ngOnInit(): void {
-
-	}
-
 }
