@@ -5,20 +5,20 @@ import {
 	Optional,
 	Self,
 	TemplateRef
-} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ControlValueAccessor, NgControl } from '@angular/forms';
-import { DropdownThemes } from '@shared/components/ui/dropdown/models/dropdown.types';
-import { BehaviorSubject } from 'rxjs';
-import { ClickOutsideDirective } from '@shared/directives/click-outside.directive';
-import { IconComponent } from '@shared/components/ui/icon/icon.component';
+} from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { ControlValueAccessor, NgControl } from "@angular/forms";
+import { DropdownThemes } from "@shared/components/ui/dropdown/models/dropdown.types";
+import { BehaviorSubject } from "rxjs";
+import { ClickOutsideDirective } from "@shared/directives/click-outside.directive";
+import { IconComponent } from "@shared/components/ui/icon/icon.component";
 
 @Component({
-	selector: 'ku-dropdown',
+	selector: "ku-dropdown",
 	standalone: true,
 	imports: [CommonModule, ClickOutsideDirective, IconComponent],
-	templateUrl: './dropdown.component.html',
-	styleUrls: ['./dropdown.component.sass'],
+	templateUrl: "./dropdown.component.html",
+	styleUrls: ["./dropdown.component.sass"],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DropdownComponent<T> implements ControlValueAccessor {
@@ -34,9 +34,9 @@ export class DropdownComponent<T> implements ControlValueAccessor {
 	}
 
 	@Input() optionTemplate!: TemplateRef<any | undefined>;
-	@Input() theme: DropdownThemes = 'shadow';
-	@Input() optionKey: string = 'id';
-	@Input() optionLabel: string = 'name';
+	@Input() theme: DropdownThemes = "shadow";
+	@Input() optionKey = "id";
+	@Input() optionLabel = "name";
 
 	get options(): Array<T> | null {
 		return this._options;
@@ -71,10 +71,6 @@ export class DropdownComponent<T> implements ControlValueAccessor {
 		this._value = item;
 	}
 
-	private isOpen(): boolean {
-		return this.isClicked$.value;
-	}
-
 	swap(event: Event): void {
 		event.stopPropagation();
 		this.isClicked$.next(!this.isOpen())
@@ -83,5 +79,10 @@ export class DropdownComponent<T> implements ControlValueAccessor {
 	close(): void {
 		this.isClicked$.next(false)
 	}
+
+	private isOpen(): boolean {
+		return this.isClicked$.value;
+	}
+
 
 }

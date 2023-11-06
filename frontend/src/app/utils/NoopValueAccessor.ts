@@ -1,5 +1,5 @@
-import { ControlValueAccessor, FormControlDirective, FormControlName, NgControl, NgModel } from '@angular/forms';
-import { inject } from '@angular/core';
+import { ControlValueAccessor, FormControlDirective, FormControlName, NgControl, NgModel } from "@angular/forms";
+import { inject } from "@angular/core";
 
 export class NoopValueAccessor implements ControlValueAccessor {
 	registerOnChange(fn: any): void {
@@ -15,7 +15,7 @@ export class NoopValueAccessor implements ControlValueAccessor {
 export function injectNgControl() {
 	const ngControl = inject(NgControl, { self: true, optional: true });
 
-	if (!ngControl) throw new Error('ngControl doesn\'t exist');
+	if (!ngControl) throw new Error("ngControl doesn't exist");
 
 	if (
 		ngControl instanceof FormControlDirective ||
@@ -28,5 +28,5 @@ export function injectNgControl() {
 		return ngControl;
 	}
 
-	throw new Error(`...`);
+	throw new Error("...");
 }

@@ -1,20 +1,20 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { LoginPageComponent } from '@app/admin/pages/login-page/login-page.component';
-import { AdminLayoutComponent } from '@shared/components/layouts/admin-layout/admin-layout.component';
-import { AdminMainPageComponent } from '@app/admin/pages/admin-main-page/admin-main-page.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { LoginPageComponent } from "@app/admin/pages/login-page/login-page.component";
+import { AdminLayoutComponent } from "@shared/components/layouts/admin-layout/admin-layout.component";
+import { AdminMainPageComponent } from "@app/admin/pages/admin-main-page/admin-main-page.component";
 
 const routes: Routes = [
 	{
-		path: 'login',
+		path: "login",
 		component: LoginPageComponent
 	},
 	{
-		path: '',
+		path: "",
 		component: AdminLayoutComponent,
 		children: [
 			{
-				path: '',
+				path: "",
 				component: AdminMainPageComponent
 			}
 		]

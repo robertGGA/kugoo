@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from "@angular/core";
 
 
 interface BreadCrumbsData {
@@ -6,18 +6,18 @@ interface BreadCrumbsData {
 }
 
 const urlDescription: BreadCrumbsData = {
-	scooter: 'Электросамокаты',
-	catalog: 'Каталог',
-	main: 'Главная'
+	scooter: "Электросамокаты",
+	catalog: "Каталог",
+	main: "Главная"
 }
 
 @Pipe({
-	name: 'breadCrumbUrl',
+	name: "breadCrumbUrl",
 	standalone: true
 })
 export class BreadCrumbUrlPipe implements PipeTransform {
 	transform(value: string, isLast?: boolean, separator?: string): string {
-		const separatedUrl = value.split(separator ?? ' ');
+		const separatedUrl = value.split(separator ?? " ");
 
 		return separatedUrl
 			.filter(urlItem => urlDescription[urlItem as keyof BreadCrumbsData] || Number(urlItem))

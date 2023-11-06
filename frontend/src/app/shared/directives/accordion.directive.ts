@@ -1,8 +1,8 @@
-import { ContentChild, Directive, HostListener, inject, Input, OnInit, TemplateRef } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Directive, Input, OnInit } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
 
 @Directive({
-	selector: '[kuAccordion]',
+	selector: "[kuAccordion]",
 	standalone: true
 })
 export class AccordionDirective implements OnInit {

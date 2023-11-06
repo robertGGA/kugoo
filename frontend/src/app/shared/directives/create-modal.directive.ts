@@ -1,7 +1,7 @@
-import { Directive, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Directive, TemplateRef, ViewContainerRef } from "@angular/core";
 
 @Directive({
-	selector: '[kuCreateModal]',
+	selector: "[kuCreateModal]",
 	standalone: true
 })
 export class CreateModalDirective {
