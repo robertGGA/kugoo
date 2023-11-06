@@ -15,12 +15,13 @@ import { DOCUMENT } from "@angular/common";
 export class ClickOutsideDirective implements OnInit, OnDestroy {
 
 	@Output() eventOnClick = new EventEmitter();
-	listenerFn = () => {};
 
 	constructor(private elementRef: ElementRef,
 				@Inject(DOCUMENT) private document: Document,
 				private renderer: Renderer2) {
 	}
+
+	listenerFn = () => {};
 
 	ngOnInit(): void {
 		this.listenerFn = this.renderer.listen("window", "click", (event) => {
