@@ -1,0 +1,17 @@
+<div class='ku-input-wrapper'>
+	<span
+		class='ku-input-placeholder'
+		*ngIf='placeholder && !ngControl.control.dirty'
+		[class.ku-input-placeholder-touched]='isTouched && placeholder'
+		[class.ku-input-floating-label]='isFloatingLabel && isTouched'
+	>
+		{{placeholder}}
+	</span>
+	<input
+		[formControl]='ngControl.control'
+		class='input-base ku-input {{theme}}'
+		(click)='swapFloating()'
+		[type]='type'
+		#inputElement
+	/>
+</div>

@@ -1,0 +1,14 @@
+<div
+	class='card'
+	[ngClass]='theme'
+>
+	<img [src]='image' />
+	<div>
+		<p class='title'>
+			<ng-content></ng-content>
+		</p>
+		<button (click)='executeEvent()'>
+			{{eventName}}
+		</button>
+	</div>
+</div>

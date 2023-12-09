@@ -1,0 +1,121 @@
+<div class='card-container'>
+	<div class='card-image-container'>
+		<div class='card-header'>
+			<ng-container *ngIf='isNew !== undefined; else unknownChip'>
+				<ku-chip [options]='chipOptions' [theme]='isNew ? "green" : "red"'>
+					{{isNew ? 'Новинка' : 'Хит'}}
+				</ku-chip>
+			</ng-container>
+
+			<button>
+				<ku-icon
+					widthIcon='20'
+					heightIcon='20'
+					svgIcon='balance2'
+				></ku-icon>
+			</button>
+
+		</div>
+		<div class='image-wrapper'>
+			<img
+				class='card-image'
+				src='assets/preview-images/samokat.png'
+			/>
+		</div>
+	</div>
+
+	<div class='card-description'>
+		<a routerLink='catalog/scooter/{{cardData.id}}'>
+			{{cardData.name}}
+		</a>
+
+		<div
+			*ngIf='cardData.specs'
+			class='card-specs'
+		>
+			<span>
+				<ku-icon
+					widthIcon='18'
+					heightIcon='18'
+					svgIcon='accumulator-1'
+				/>
+				<p>
+					{{cardData.specs.accum ?? 0}} mAh
+				</p>
+			</span>
+
+			<span>
+				<ku-icon
+					widthIcon='18'
+					heightIcon='18'
+					svgIcon='power-1'
+				/>
+				<p>
+					{{cardData.specs.power ?? 0}} л.с
+				</p>
+			</span>
+
+			<span>
+				<ku-icon
+					widthIcon='18'
+					heightIcon='18'
+					svgIcon='speedometer-1'
+				/>
+				<p>
+					{{cardData.specs.speed ?? 0}} км/ч
+				</p>
+			</span>
+			<span>
+				<ku-icon
+					widthIcon='18'
+					heightIcon='18'
+					svgIcon='timer-1'
+				/>
+				<p>
+					{{cardData.specs.time ?? 0}} часов
+				</p>
+			</span>
+		</div>
+
+		<div class='card-price-container'>
+			<div>
+				<p
+					*ngIf='cardData.discount'
+					class='card-price-discount'
+				>
+					{{cardData.discount}} ₽
+				</p>
+				<h2 class='card-price'>
+					{{cardData.price}} ₽
+				</h2>
+			</div>
+
+			<div class='card-actions'>
+				<button>
+					<ku-icon
+						svgIcon='shopping-cart-1-2'
+						widthIcon='20'
+						heightIcon='20'
+					></ku-icon>
+				</button>
+				<button>
+					<ku-icon
+						svgIcon='heart'
+						widthIcon='20'
+						heightIcon='20'
+					></ku-icon>
+				</button>
+			</div>
+		</div>
+
+		<ku-button class='buy-button'>
+			Купить в 1 клик
+		</ku-button>
+	</div>
+</div>
+
+
+<ng-template #unknownChip>
+	<div>
+	</div>
+</ng-template>

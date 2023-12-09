@@ -1,0 +1,28 @@
+<ng-template
+	#overlay='cdkConnectedOverlay'
+	cdkConnectedOverlay
+	[cdkConnectedOverlayOrigin]='origin'
+	[cdkConnectedOverlayOpen]='visible'
+	[cdkConnectedOverlayPositions]='positions'
+	[cdkConnectedOverlayPush]='true'
+	(detach)='hide()'
+	(positionChange)='positionChange($event)'
+>
+	<div
+		#tooltip
+		class='tooltip-container'
+	>
+		<div class='tooltip-body'>
+			<div *ngIf='view'>
+				<ng-container [ngTemplateOutlet]='view || empty'></ng-container>
+			</div>
+		</div>
+	</div>
+</ng-template>
+
+<ng-template #empty>
+	<div>
+		Здесь ничего нет
+	</div>
+</ng-template>
+

@@ -11,7 +11,8 @@ frontend/node_modules/tmp
 
 # dependencies
 */node_modules
-
+node_modules
+.angular
 
 
 # profiling files
@@ -36,7 +37,7 @@ chrome-profiler-events*.json
 .history/*
 
 # misc
-*/.angular/cache
+.angular/cache
 *.sass-cache
 */connect.lock
 */coverage

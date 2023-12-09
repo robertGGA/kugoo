@@ -1,0 +1,18 @@
+@import "mixins"
+
+.chip
+	padding: 4px 9px
+	color: white
+	border-radius: 5px
+	width: fit-content
+
+	&-red
+		@extend .chip
+		background: $c-red
+
+	&-active
+		text-transform: uppercase
+
+	&-green
+		@extend .chip
+		background-color: $c-green

@@ -1,0 +1,69 @@
+<main>
+	<section class='image-section'>
+		<div class='image-preview'>
+			<img [src]='chooseImage' />
+		</div>
+		<div class='image-card-wrapper'>
+			<img
+				*ngFor='let img of images;'
+				(click)='changeImage(img)'
+				class='image-card'
+				[src]='img'
+			/>
+		</div>
+	</section>
+
+	<section class='info-section'>
+		<h1>
+			Kugoo Kirin M4
+		</h1>
+		<span class='info-counter-row'>
+			<p>
+				Просмотров 350
+			</p>
+			<p>
+				Купили 196 раз
+			</p>
+			<p>
+				Артикул: 2200000000026
+			</p>
+		</span>
+
+		<ul class='info-compare-row'>
+			<li [class.not-exist]='!isExists'>
+				{{isExists ? "В наличии" : "В наличии нет"}}
+			</li>
+
+			<li>
+				<button>
+					<ku-icon svgIcon='balance2' heightIcon='20' widthIcon='20'>
+
+					</ku-icon>
+					<span>
+						Сравнить
+					</span>
+				</button>
+
+				<button>
+					<ku-icon svgIcon='share-1' heightIcon='20' widthIcon='20'>
+
+					</ku-icon>
+					<span>
+						Поделиться
+					</span>
+				</button>
+			</li>
+		</ul>
+
+		<div>
+			<span>
+				<p>
+
+				</p>
+				<p>
+
+				</p>
+			</span>
+		</div>
+	</section>
+</main>

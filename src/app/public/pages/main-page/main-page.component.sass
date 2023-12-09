@@ -1,0 +1,251 @@
+@import "mixins"
+
+main
+	@include width-1380
+	display: flex
+	flex-direction: column
+	row-gap: 100px
+
+section
+	@include width-1200
+
+	@include sm
+		display: none !important
+
+	&:last-child
+		margin-bottom: 73px
+
+h1
+	@include h1
+	text-transform: uppercase
+
+.section-title-wrapper
+	@include flex-row
+	justify-content: space-between
+	align-items: center
+
+	@include md
+		flex-direction: column
+
+		h1
+			margin-bottom: 15px
+
+.scooter
+
+	&-button
+		&-show
+			margin: 0 auto
+
+			ku-button
+				padding: 15px 25px
+				border-radius: 5px
+
+	&-list
+		display: grid
+		justify-content: center
+		grid-template-columns: repeat(auto-fill, 255px)
+		gap: 30px
+		margin: 50px 0 50px 0
+
+		&-title
+			@include flex-row
+			justify-content: space-between
+
+			@include md
+				flex-direction: column
+				align-items: center
+
+				h1
+					margin-bottom: 15px
+
+
+			div
+				@include flex-row
+				gap: 10px
+
+			.button
+				padding: 10px 20px
+				text-align: center
+				border-radius: 5px
+				@include content-12
+
+
+		&-container
+			@include flex-column
+			margin-top: 81px
+
+.accordion
+	width: 100%
+	display: flex
+	justify-content: space-between
+	align-items: center
+	cursor: pointer
+	user-select: none
+
+	&-active
+		transform: rotateZ(225deg)
+
+	&-closed
+		padding: 26px 0
+
+	span
+		@include content-16
+		font-weight: 500
+
+	button
+		background: none
+		border: none
+		display: flex
+		transition: 1s
+
+	&-body
+		background-color: white
+
+		div
+			margin-top: 24px
+
+	&-wrapper
+		padding: 26px 0
+		border-bottom: 1px solid $c-gray-200
+		overflow: hidden
+
+.section
+
+	&-service-card
+		@include flex-row
+		justify-content: space-between
+		margin-top: 10px
+
+		@include xl
+			align-items: center
+			@include flex-column
+
+			ku-service-card:last-child
+				margin-top: 30px
+
+	&-category
+
+		&-card
+			&-button
+				display: flex
+				justify-content: center
+
+			ku-button
+				margin: 0 auto
+				padding: 15px 25px
+				border-radius: 5px
+
+	&-accordions
+		display: flex
+		flex-direction: column
+
+		h1
+			text-align: center
+			margin: 0 auto 60px
+			@include h1
+			text-transform: uppercase
+			max-width: 456px
+
+
+.service
+
+	&-card
+		display: flex
+		flex-direction: column
+		max-width: 258px
+
+		&-background
+			position: absolute
+			right: 0
+			width: 33%
+			height: 130%
+			top: 0
+			z-index: 0
+			border-bottom-left-radius: 90%
+			border-top-left-radius: 45%
+			background-color: $c-primary-purple
+
+		&-image
+			right: 0
+			width: 255px
+			top: 0
+			position: absolute
+			z-index: 1
+
+			&:before
+				content: ''
+				height: 100%
+				width: 50px
+				position: absolute
+				background-color: $c-primary-purple
+
+		&-title
+			@include h2
+			word-break: break-word
+			text-transform: uppercase
+
+		p
+			@include content-16
+			margin-top: 10px
+
+		a
+			display: flex
+			align-items: center
+			margin-top: 22px
+			color: $c-primary-purple
+
+			&:hover
+				color: $c-primary-purple-hovered
+
+			ku-icon
+				display: flex
+				margin-left: 10px
+
+.wide-section
+	@include width-1380
+	margin: 0 auto
+
+.delivery-slide
+	@include flex-row
+	justify-content: flex-end
+	background: radial-gradient(#595959, #3B3E46)
+	width: 100%
+	padding: 67px 172px
+
+	&-section
+		@include width-1380
+		margin: 0 auto
+
+	img
+		position: absolute
+		width: 850px
+		left: 10px
+		bottom: 0
+
+	&-link
+		margin-top: 27px
+		padding: 15px 25px
+		background: white
+		border-radius: 6px
+		width: fit-content
+
+		&:hover
+			opacity: 0.7
+
+
+	&-content
+		height: 100%
+		@include flex-column
+		max-width: 451px
+		z-index: 1
+
+		h1
+			@include h1
+			color: white
+			margin-top: 27px
+			text-transform: uppercase
+
+
+
+
+

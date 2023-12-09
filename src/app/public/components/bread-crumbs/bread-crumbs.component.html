@@ -1,0 +1,23 @@
+<div class='link-wrapper'>
+	<a routerLink=''>
+		<ku-icon
+			class='link-icon'
+			svgIcon='outlined-home'
+			widthIcon='15'
+			heightIcon='15'
+		>
+
+		</ku-icon>
+	</a>
+	<a
+		class='link'
+		*ngFor='let link of route; let i = index'
+		[routerLinkActiveOptions]='{exact: true}'
+		[routerLink]='validUrl(link)'
+		routerLinkActive='link-active'
+	>
+		{{link | breadCrumbUrl : i === (route.length - 1)}}
+	</a>
+</div>
+
+<router-outlet></router-outlet>
