@@ -8,24 +8,24 @@
 		"watch": "ng build --watch --configuration development",
 		"test": "ng test --watch=false --browsers ChromeHeadless",
 		"lint": "eslint src",
-		"lint:fix": "eslint src --fix"
+		"lint:fix": "eslint src --fix",
+		"prepare": "husky install"
 	},
 	"commitlint": {
 		"extends": [
 			"@commitlint/config-angular"
 		]
 	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged --relative"
+		}
+	},
 	"lint-staged": {
-		"[*.ts, *.js, *.html, *.sass, *.css]": [
+		"*.{js,ts}": [
 			"npm run lint:fix",
 			"git add"
 		]
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged",
-			"pre-push": "npm run test"
-		}
 	},
 	"private": true,
 	"dependencies": {
@@ -73,6 +73,7 @@
 		"karma-coverage": "~2.0.3",
 		"karma-jasmine": "~4.0.0",
 		"karma-jasmine-html-reporter": "~1.7.0",
+		"lint-staged": "^15.2.0",
 		"prettier": "^3.1.0",
 		"typescript": "~4.8.4"
 	}
