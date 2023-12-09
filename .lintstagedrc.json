@@ -1,5 +1,3 @@
 {
-	"*.ts": "npx tsc --noEmit",
-	"*.{js,ts}": "npx eslint",
-	"*.{js,ts,html,css,sass}": "npx prettier --check"
+	"*.{js,ts}": "npm run lint:fix"
 }
