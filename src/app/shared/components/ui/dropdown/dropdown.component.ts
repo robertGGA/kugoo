@@ -47,7 +47,7 @@ export class DropdownComponent<T> implements ControlValueAccessor {
 
 	private dropdownOptions: Array<T> | null = null;
 
-	private _value: T | null = null;
+	private val: T | null = null;
 
 	constructor(@Self() @Optional() public ngControl: NgControl) {
 		if (this.ngControl) {
@@ -64,7 +64,7 @@ export class DropdownComponent<T> implements ControlValueAccessor {
 	}
 
 	writeValue(obj: any): void {
-		this._value = obj;
+		this.val = obj;
 	}
 
 	getCurrentTheme(): DropdownThemes {
@@ -72,7 +72,7 @@ export class DropdownComponent<T> implements ControlValueAccessor {
 	}
 
 	addItem(item: T): void {
-		this._value = item;
+		this.val = item;
 	}
 
 	swap(event: Event): void {
